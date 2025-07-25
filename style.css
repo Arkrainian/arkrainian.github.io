@@ -85,6 +85,21 @@ margin: auto;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.latestThing{
+      display: flex;
+margin: auto;
+ position: fixed;
+ width: 45%;
+ overflow: hidden;   
+  border-radius: 35px;
+  border: 15px solid #070707;
+  background-color: aliceblue;
+
+    height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .indicator {
     position: absolute;
