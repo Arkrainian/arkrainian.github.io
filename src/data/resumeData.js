@@ -58,7 +58,7 @@ export const resumeData = {
             year: "2025",
             status: "completed",
             url: "https://uci.edu/",
-            image: "/UCI_Donald_Bren_Hall.jpg"
+            image: "https://upload.wikimedia.org/wikipedia/commons/9/93/UCI_Donald_Bren_Hall.jpg"
         },
         {
             id: 2,
@@ -67,7 +67,7 @@ export const resumeData = {
             year: "2025",
             status: "completed",
             url: "https://uci.edu/",
-            image: "/UCI_Donald_Bren_Hall.jpg"
+            image: "https://upload.wikimedia.org/wikipedia/commons/9/93/UCI_Donald_Bren_Hall.jpg"
         },
         {
             id: 3,
@@ -76,7 +76,7 @@ export const resumeData = {
             year: "2025",
             status: "enrolled",
             url: "https://www.cerritoshs.us/",
-            image: "/cerritos-high-school-cerritos-ca-primaryphoto.jpg"
+            image: "https://imagescdn.homes.com/i2/bBU9tEsWS9lVQfEl5ZE0DTOosLQybwLI1LUieSLa_GE/117/cerritos-high-school-cerritos-ca-primaryphoto.jpg?p=1"
         },
         {
             id: 4,
