@@ -173,11 +173,12 @@ export const resumeData = {
             details: "This project involved the deployment of a hardened VPN gateway on Raspberry Pi hardware to facilitate secure, encrypted communication between remote clients and a local network. I utilized the WireGuard protocol for its superior performance and modern cryptographic primitives, implementing a robust peer-to-peer architecture that minimizes latency while maximizing throughput. The setup includes a custom firewall configuration using iptables to enforce strict traffic isolation and prevent DNS leaks.\n\To ensure enterprise-grade security, I implemented automated security audits and two-factor authentication for administrative access. The project also features a real-time monitoring dashboard to track connection status and bandwidth utilization. This implementation serves as a cost-effective, high-performance alternative to commercial VPN solutions, providing full control over data privacy and network sovereignty.",
             tech: ["Linux", "Raspberry Pi", "WireGuard", "Networking"],
             media: {
-                type: "image",
-                url: "C:/Users/satya/.gemini/antigravity/brain/c022389c-ecb6-45d6-9245-85c99e4afefc/raspberry_pi_vpn_project_1766359152215.png"
+                type: "video",
+                url: "https://www.youtube.com/embed/bOiTHf8aeO8"
             },
             links: {
-                code: "https://github.com/acrowbatics100"
+                code: "https://github.com/acrowbatics100",
+                video: "https://youtu.be/bOiTHf8aeO8"
             }
         },
 
