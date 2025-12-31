@@ -13,8 +13,8 @@ export const resumeData = {
         meAtWork: {
             title: "Where Purpose Meets Practice",
             type: "video", // or "video"
-            url: "https://www.youtube.com/embed/rlVMoYQdl0A",
-            description: ""
+            url: "https://www.youtube.com/embed/EmNeLbML1Z8",
+            description: "This project is a physics-driven SU-57 jet simulation in Roblox that prioritizes mathematically modeled aerodynamics over arcade-style forces, using quadratic drag with a dynamically adjusted drag coefficient based on angle of attack and speed to enforce realistic energy loss at high velocities. The aircraft’s mass and inertia are tuned to reflect a heavy fifth-generation fighter, with motion governed by Newton’s laws so that momentum, turn rate, and energy retention reward smooth, disciplined flight. Thrust, lift, and drag are controlled through polynomial regression fits derived from test data, producing smooth and stable force transitions across low-speed, transonic, and high-speed regimes. Supermaneuverability is achieved through vector thrusting, where thrust is decomposed into directional components to generate both linear force and rotational torque, enabling post-stall control and rapid altitude changes inspired by real SU-57 airshow maneuvers. All forces are integrated per frame with numerical stability safeguards, while the Monument Valley–inspired environment and Top Gun: Maverick–influenced combat pacing emphasize speed, terrain-constrained maneuvering, and energy management, resulting in a continuous, equation-driven aerospace simulation rather than a scripted flight model."
         }
     },
     settings: {
@@ -58,6 +58,7 @@ export const resumeData = {
             year: "2025",
             status: "completed",
             url: "https://uci.edu/",
+            description: "I attended the UC Irvine ICS Summer Academy, where I earned a certificate in Machine Learning by developing and training models in Python using Google Colab, with an emphasis on data preprocessing, model evaluation, and applied experimentation.",
             image: "https://upload.wikimedia.org/wikipedia/commons/9/93/UCI_Donald_Bren_Hall.jpg"
         },
         {
@@ -67,6 +68,7 @@ export const resumeData = {
             year: "2025",
             status: "completed",
             url: "https://uci.edu/",
+            description: "I earned a certificate in Data Science through hands-on analysis and statistical modeling in R, applying data wrangling, visualization, and inference techniques to real-world datasets.",
             image: "https://upload.wikimedia.org/wikipedia/commons/9/93/UCI_Donald_Bren_Hall.jpg"
         },
         {
@@ -84,6 +86,7 @@ export const resumeData = {
             school: "Harvard University (Self-Study)",
             year: "2023",
             status: "completed",
+            description: "I independently self-studied Python and C through Harvard’s CS50 on YouTube, developing a strong understanding of variables, data types, strings, arrays, lists, pointers, memory allocation, control flow, and low-level program execution, and applying these concepts to solve algorithmic problems and build efficient, well-structured programs.",
             url: "https://cs50.harvard.edu/",
             image: "https://www.classcentral.com/report/wp-content/uploads/2022/05/cs50-2023-banner-e1673610020393.png"
         }
@@ -167,17 +170,18 @@ export const resumeData = {
     projects: [
         {
             id: 7,
-            order: 10,
+            order: 1,
             title: "Raspberry Pi Secure VPN Gateway",
             description: "Engineered a private, encrypted VPN tunnel using a Raspberry Pi to ensure secure remote access and data privacy.",
             details: "This project involved the deployment of a hardened VPN gateway on Raspberry Pi hardware to facilitate secure, encrypted communication between remote clients and a local network. I utilized the WireGuard protocol for its superior performance and modern cryptographic primitives, implementing a robust peer-to-peer architecture that minimizes latency while maximizing throughput. The setup includes a custom firewall configuration using iptables to enforce strict traffic isolation and prevent DNS leaks.\n\To ensure enterprise-grade security, I implemented automated security audits and two-factor authentication for administrative access. The project also features a real-time monitoring dashboard to track connection status and bandwidth utilization. This implementation serves as a cost-effective, high-performance alternative to commercial VPN solutions, providing full control over data privacy and network sovereignty.",
             tech: ["Linux", "Raspberry Pi", "WireGuard", "Networking"],
             media: {
-                type: "image",
-                url: "C:/Users/satya/.gemini/antigravity/brain/c022389c-ecb6-45d6-9245-85c99e4afefc/raspberry_pi_vpn_project_1766359152215.png"
+                type: "video",
+                url: "https://www.youtube.com/embed/bOiTHf8aeO8"
             },
             links: {
-                code: "https://github.com/acrowbatics100"
+                code: "https://github.com/acrowbatics100",
+                video: "https://youtu.be/bOiTHf8aeO8"
             }
         },
 
@@ -236,7 +240,7 @@ export const resumeData = {
 
         {
             id: 2,
-            order: 19,
+            order: -2,
             title: "Glioma Detection Capstone Project",
             description: "This project involved using machine learning to detect glioma in MRI images and CSV data.",
             details: "This research-oriented project focuses on the application of deep learning architectures to the critical challenge of early glioma detection. I engineered a dual-stream neural network capable of concurrently processing high-resolution MRI volumetric data and structured patient clinical records. The image processing stream utilizes a custom-tuned Convolutional Neural Network (CNN) with residual connections to identify subtle micro-structural abnormalities in brain tissue, while the clinical stream employs gradient-boosted decision trees to contextualize imaging findings with metabolic markers.\n\The resulting diagnostic tool demonstrates significant improvements in classification sensitivity compared to traditional radiomic approaches. By fine-tuning the model through extensive hyperparameter optimization and cross-validation techniques, I achieved a robust F1-score that validates the model's reliability in clinical simulation environments. This project underscores the transformative potential of artificial intelligence in neuro-oncology, offering a pathway toward more precise, automated, and timely interventions for brain tumor patients.",
@@ -252,18 +256,32 @@ export const resumeData = {
         },
         {
             id: 3,
-            order: 19.5,
+            order: -1,
             title: "Congressional App Challenge Submission",
-            description: "This project involved using machine learning to detect glioma in MRI images and CSV data.",
-            details: "Developed as a flagship submission for the Congressional App Challenge, this application addresses complex societal challenges through a sophisticated fusion of mobile technology and predictive analytics. The architecture follows a modern microservices pattern, ensuring high availability and scalability while maintaining a lightweight client-side footprint. I spearheaded the end-to-end development cycle, from conducting initial user persona research and wireframing high-fidelity prototypes to implementing the core algorithmic engine and deploying a secure backend infrastructure.\n\Beyond technical implementation, the project emphasizes a human-centric design philosophy, utilizing accessibility standards and intuitive navigation patterns to ensure broad community impact. The integrated machine learning module provides real-time, personalized recommendations based on user interaction history, creating a dynamic and engaging experience. This submission represents a rigorous synthesis of technical skill, social responsibility, and creative problem-solving, aimed at providing tangible digital solutions for modern community needs.",
-            tech: ["C++"],
+            description: "A high-performance Solar System simulation engineered in C++ for the Congressional App Challenge.",
+            details: "As my official submission for the Congressional App Challenge, this project represents a deep dive into celestial mechanics and high-performance computing. Engineered from the ground up in C++, the simulation employs advanced N-body algorithms to accurately calculate the gravitational interactions between planetary bodies in real-time. The architecture prioritizes computational efficiency, leveraging optimized data structures to maintain high precision even during complex orbital sequences. This submission showcases the fusion of rigorous mathematical modeling with software engineering, aimed at creating an educational and scientifically grounded digital experience.",
+            tech: ["C++", "Physics", "Celestial Mechanics"],
             media: {
                 type: "video",
                 url: "https://www.youtube.com/embed/9QV4w0NZG0o"
             },
             links: {
-                video: "https://www.youtube.com/watch?v=9QV4w0NZG0o",
-
+                video: "https://www.youtube.com/watch?v=9QV4w0NZG0o"
+            }
+        },
+        {
+            id: 14,
+            order: -1,
+            title: "Making of the Solar System",
+            description: "A detailed dev log documenting the engineering journey of building a high-performance celestial simulation.",
+            details: "This dev log provides a behind-the-scenes look at the technical challenges and breakthroughs encountered while building my Solar System simulation. I document the iterative process of implementing N-body physics, optimizing C++ code for real-time performance, and creating a visually compelling representation of celestial bodies. From the initial mathematical models to the final rendering optimizations, this log serves as a chronological record of my growth as a developer and my commitment to precision and engineering excellence. It highlights the 'how' and 'why' behind the simulation, offering insights into the complex interactions that bring the digital cosmos to life.",
+            tech: ["C++", "Physics", "Celestial Mechanics", "Dev Log"],
+            media: {
+                type: "video",
+                url: "https://www.youtube.com/embed/og3xazgqunk"
+            },
+            links: {
+                video: "https://youtu.be/og3xazgqunk"
             }
         },
         {
@@ -304,7 +322,7 @@ export const resumeData = {
         },
         {
             id: 13,
-            order: 19.1,
+            order: -1.5,
             title: "Astrophysics Stellar Classification Capstone Project",
             description: "A machine learning project that classifies stars based on their spectral characteristics using astrophysical data.",
             details: "This capstone project, completed as part of the UCI Data Science Summer Academy, focuses on the automated classification of stars. Utilizing a comprehensive dataset of stellar parameters—including temperature, luminosity, radius, and absolute magnitude—I developed a robust predictive model to categorize stars into their respective spectral classes (O, B, A, F, G, K, M). The project involved extensive data preprocessing, the generation of Hertzsprung-Russell diagrams for visual analysis, and the implementation of advanced classification algorithms. This work demonstrates the intersection of astrophysics and data science, applying computational methods to solve complex astronomical classification challenges.",
@@ -319,7 +337,7 @@ export const resumeData = {
         },
         {
             id: 6,
-            order: -1,
+            order: 1000,
             title: "This Portfolio",
             description: "This is the portfolio I made.",
             details: "My personal developer portfolio, designed to be fast, responsive, and visually stunning. Built with React and Vite for efficiency, it features immersive 3D background animations using Three.js and smooth scrolling effects with GSAP. The code is modular, well-documented, and fully customizable, serving as a hub for all my projects and skills.",
@@ -349,21 +367,21 @@ export const resumeData = {
                 code: "https://scratch.mit.edu/projects/410585863/"
             }
         },
-        {
-            id: 12,
-            order: 0,
-            title: "Roblox Studio Plane Physics",
-            description: "A high-fidelity flight simulation system built in Roblox Studio using custom aerodynamic calculations.",
-            details: "This project focuses on the engineering of a realistic flight model within the Roblox engine. I implemented a custom aerodynamic solver that calculates lift, drag, and thrust based on the plane's velocity and angle of attack. The system features a procedural control surface animation system and a realistic cockpit interface. Developed using Luau, this project demonstrates my ability to translate complex physical principles into interactive, real-time game systems.",
-            tech: ["Luau", "Roblox Studio", "Aerodynamics"],
-            media: {
-                type: "video",
-                url: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
-            },
-            links: {
-                video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder
-            }
-        },
+        /* {
+             id: 12,
+             order: 0,
+             title: "Roblox Studio Plane Physics",
+             description: "A high-fidelity flight simulation system built in Roblox Studio using custom aerodynamic calculations.",
+             details: "This project focuses on the engineering of a realistic flight model within the Roblox engine. I implemented a custom aerodynamic solver that calculates lift, drag, and thrust based on the plane's velocity and angle of attack. The system features a procedural control surface animation system and a realistic cockpit interface. Developed using Luau, this project demonstrates my ability to translate complex physical principles into interactive, real-time game systems.",
+             tech: ["Luau", "Roblox Studio", "Aerodynamics"],
+             media: {
+                 type: "video",
+                 url: "https://www.youtube.com/embed/dQw4w9WgXcQ" // Placeholder
+             },
+             links: {
+                 video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder
+             }
+         },*/
     ],
     about: {
         backstory: [

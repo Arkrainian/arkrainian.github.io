@@ -51,6 +51,7 @@ const Education = () => {
                     <h3 className="edu-school">{edu.school}</h3>
                   )}
                   <p className="edu-degree">{edu.degree}</p>
+                  {edu.description && <p className="edu-description">{edu.description}</p>}
                   <span className="edu-year">In Progress</span>
                 </div>
                 {edu.image && hoveredCard === edu.id && (
@@ -81,6 +82,7 @@ const Education = () => {
                     <h3 className="edu-degree">{edu.degree || "High School Diploma"}</h3>
                     <span className="edu-year">{edu.year}</span>
                   </div>
+                  {edu.description && <p className="edu-description">{edu.description}</p>}
                   {edu.url ? (
                     <a href={edu.url} target="_blank" rel="noopener noreferrer" className="edu-school-link">
                       <h4 className="edu-school">{edu.school}</h4>
@@ -126,8 +128,14 @@ const Education = () => {
 
         .education-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+          .education-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .edu-card {
@@ -177,7 +185,16 @@ const Education = () => {
 
         .edu-degree {
           color: var(--text-secondary);
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
+          font-weight: 500;
+        }
+
+        .edu-description {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          margin-bottom: 0.75rem;
+          opacity: 0.8;
+          line-height: 1.4;
         }
 
         .edu-year {
