@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { resumeData } from '../../data/resumeData';
 import { ExternalLink, Github, Info, ArrowRight, Presentation, Video } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Projects = () => {
   const videoRefs = useRef([]);
@@ -23,7 +24,11 @@ const Projects = () => {
 
   return (
     <div className="page-transition">
-      <h2 className="section-title">Projects</h2>
+      <Helmet>
+        <title>Projects | Krish Sathyan Portfolio</title>
+        <meta name="description" content="Explore the diverse range of projects by Krish Sathyan, from physics simulations and voxel engines to secure VPN gateways and AI-driven medical research." />
+      </Helmet>
+      <h2 className="section-title">Portfolio Showcase</h2>
 
       <div className="projects-grid">
         {resumeData.projects

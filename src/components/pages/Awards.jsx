@@ -1,63 +1,68 @@
+import React, { useState } from 'react';
+import { Trophy, Star, Award, ExternalLink, Info, X } from 'lucide-react';
 import { resumeData } from '../../data/resumeData';
-import { Calendar, Info, X } from 'lucide-react';
-import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 
-const Experience = () => {
-  const [selectedExp, setSelectedExp] = useState(null);
+const iconMap = {
+  trophy: <Trophy size={32} />,
+  star: <Star size={32} />,
+  award: <Award size={32} />,
+};
+
+const Awards = () => {
+  const [selectedAward, setSelectedAward] = useState(null);
   const [enlargedImage, setEnlargedImage] = useState(null);
 
-  const closeModal = () => setSelectedExp(null);
+  const closeModal = () => setSelectedAward(null);
   const closeEnlarged = () => setEnlargedImage(null);
 
   return (
     <div className="page-transition">
-      <Helmet>
-        <title>Experience | Krish Sathyan Portfolio</title>
-        <meta name="description" content="Professional history and contributions of Krish Sathyan in freelance game development, AI consulting, and community STEM outreach." />
-      </Helmet>
-      <h2 className="section-title">Professional Journey</h2>
+      <h2 className="section-title">Awards & Honors</h2>
 
-      <div className="timeline">
-        {resumeData.experience.map((job, index) => (
-          <div key={job.id} className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content glass-panel">
-              <div className="job-header">
-                <h3 className="job-role">{job.role}</h3>
-                <span className="job-period">
-                  <Calendar size={16} /> {job.period}
-                </span>
+      <div className="awards-grid">
+        {resumeData.awards?.map((award) => (
+          <div key={award.id} className="award-card glass-panel">
+            <div className="award-icon-container">
+              {iconMap[award.icon] || <Trophy size={32} />}
+            </div>
+            <div className="award-content">
+              <div className="award-header">
+                <h3 className="award-title">{award.title}</h3>
+                <span className="award-year">{award.year}</span>
               </div>
-              <h4 className="job-company">{job.company}</h4>
-              {Array.isArray(job.description) ? (
-                <ul className="job-description-list">
-                  {job.description.map((desc, i) => (
-                    <li key={i}>{desc}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="job-description">{job.description}</p>
-              )}
+              <h4 className="award-issuer">{award.issuer}</h4>
+              <p className="award-description">{award.description}</p>
 
-              {job.details && (
-                <div className="job-actions">
+              <div className="award-actions">
+                {award.details && (
                   <button
                     className="more-details-btn"
-                    onClick={() => setSelectedExp(job)}
+                    onClick={() => setSelectedAward(award)}
                   >
                     <Info size={16} />
                     <span>More Details</span>
                   </button>
-                </div>
-              )}
+                )}
+
+                {award.link && (
+                  <a
+                    href={award.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="award-link"
+                  >
+                    <ExternalLink size={16} />
+                    <span>Visit Link</span>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Modal Overlay */}
-      {selectedExp && (
+      {selectedAward && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content glass-panel" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>
@@ -66,30 +71,30 @@ const Experience = () => {
 
             <div className="modal-header">
               <div className="modal-icon">
-                <Calendar size={32} />
+                {iconMap[selectedAward.icon] || <Trophy size={32} />}
               </div>
               <div>
-                <h3 className="modal-title">{selectedExp.role}</h3>
-                <p className="modal-company">{selectedExp.company}</p>
+                <h3 className="modal-title">{selectedAward.title}</h3>
+                <p className="modal-issuer">{selectedAward.issuer}</p>
               </div>
             </div>
 
             <div className="modal-body">
-              {selectedExp.details?.text && (
-                <p className="modal-text">{selectedExp.details.text}</p>
+              {selectedAward.details?.text && (
+                <p className="modal-text">{selectedAward.details.text}</p>
               )}
 
-              {selectedExp.details?.media && selectedExp.details.media.length > 0 && (
+              {selectedAward.details?.media && selectedAward.details.media.length > 0 && (
                 <div className="modal-media-grid">
-                  {selectedExp.details.media.map((item, index) => {
-                    const isYouTubeUrl = typeof item.url === 'string' && (item.url.includes('youtube.com') || item.url.includes('youtu.be'));
+                  {selectedAward.details.media.map((item, index) => {
+                    const isYouTubeUrl = item.url.includes('youtube.com') || item.url.includes('youtu.be');
                     return (
                       <div key={index} className="modal-media-item">
                         {item.type === 'video' ? (
                           isYouTubeUrl ? (
                             <iframe
                               src={item.url}
-                              title={`${selectedExp.role} video`}
+                              title={`${selectedAward.title} video`}
                               frameBorder="0"
                               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowFullScreen
@@ -101,7 +106,7 @@ const Experience = () => {
                         ) : (
                           <img
                             src={item.url}
-                            alt="Experience highlight"
+                            alt="Award highlight"
                             className="modal-media clickable-image"
                             onClick={() => setEnlargedImage(item.url)}
                           />
@@ -138,8 +143,9 @@ const Experience = () => {
           margin-bottom: 3rem;
           position: relative;
           display: inline-block;
+          color: var(--text-primary);
         }
-
+        
         .section-title::after {
           content: '';
           position: absolute;
@@ -151,126 +157,132 @@ const Experience = () => {
           border-radius: 2px;
         }
 
-        .timeline {
-          position: relative;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 2rem 0;
+        .awards-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 2rem;
         }
 
-        .timeline::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 2px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 2px;
+        @media (max-width: 768px) {
+          .awards-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
         }
 
-        .timeline-item {
-          position: relative;
-          padding-left: 2.5rem;
-          margin-bottom: 3rem;
+        .award-card {
+          padding: 2rem;
+          display: flex;
+          gap: 1.5rem;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          align-items: flex-start;
         }
 
-        .timeline-marker {
-          position: absolute;
-          left: -5px;
-          top: 0;
-          width: 12px;
-          height: 12px;
-          background: var(--accent-primary);
-          border-radius: 50%;
-          box-shadow: 0 0 10px var(--accent-glow);
-          z-index: 1;
+        .award-card:hover {
+          transform: translateY(-5px);
+          border-color: var(--accent-primary);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          background: rgba(30, 41, 59, 0.6);
         }
 
-        .timeline-content {
-          padding: 1.5rem;
-          transition: transform 0.3s ease;
+        .award-icon-container {
+          width: 60px;
+          height: 60px;
+          border-radius: 16px;
+          background: rgba(250, 204, 21, 0.1); /* Gold tint */
+          color: #facc15; /* Gold icon */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border: 1px solid rgba(250, 204, 21, 0.2);
+          box-shadow: inset 0 0 20px rgba(250, 204, 21, 0.05);
+        }
+        
+        .award-card:hover .award-icon-container {
+           box-shadow: 0 0 15px rgba(250, 204, 21, 0.3), inset 0 0 20px rgba(250, 204, 21, 0.1);
+           transform: scale(1.05);
+           transition: all 0.3s ease;
         }
 
-        .timeline-content:hover {
-          transform: translateX(5px);
-          background: rgba(30, 41, 59, 0.9);
+        .award-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
 
-        .job-header {
+        .award-header {
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          align-items: flex-start;
+          gap: 1rem;
           margin-bottom: 0.5rem;
-          flex-wrap: wrap;
-          gap: 0.5rem;
         }
 
-        .job-role {
-          font-size: 1.25rem;
+        .award-title {
+          font-family: var(--font-display);
+          font-size: 1.3rem;
           color: var(--text-primary);
+          margin: 0;
+          line-height: 1.3;
         }
 
-        .job-period {
-          font-size: 0.875rem;
-          color: var(--text-secondary);
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .job-company {
-          font-size: 1.1rem;
+        .award-year {
+          display: inline-block;
+          padding: 0.25rem 0.75rem;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          font-size: 0.85rem;
           color: var(--accent-secondary);
+          white-space: nowrap;
+        }
+
+        .award-issuer {
+          color: var(--accent-primary);
+          font-size: 1rem;
+          font-weight: 500;
           margin-bottom: 1rem;
         }
 
-        .job-description {
+        .award-description {
           color: var(--text-secondary);
           line-height: 1.6;
+          font-size: 0.95rem;
+          margin-bottom: 1.5rem;
         }
 
-        .job-description-list {
-          color: var(--text-secondary);
-          list-style-type: disc;
-          padding-left: 1.2rem;
-          margin-top: 0.5rem;
-        }
-
-        .job-description-list li {
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .job-actions {
-          margin-top: 1.5rem;
+        .award-actions {
           display: flex;
-          gap: 1rem;
+          gap: 1.5rem;
+          margin-top: auto;
+          align-items: center;
         }
 
-        .more-details-btn {
+        .more-details-btn, .award-link {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
           color: var(--accent-secondary);
-          background: transparent;
-          border: none;
-          cursor: pointer;
+          text-decoration: none;
           font-size: 0.9rem;
           font-weight: 500;
           transition: all 0.3s ease;
           opacity: 0.8;
+          background: transparent;
+          border: none;
+          cursor: pointer;
           padding: 0;
           font-family: inherit;
         }
 
-        .more-details-btn:hover {
+        .more-details-btn:hover, .award-link:hover {
           opacity: 1;
           gap: 0.75rem;
-          color: var(--accent-primary);
+          color: #facc15;
         }
 
-        /* Modal Styles - Shared across pages but scoped here for consistency */
+        /* Modal Styles */
         .modal-overlay {
           position: fixed;
           top: 0;
@@ -292,7 +304,7 @@ const Experience = () => {
           width: 100%;
           max-height: 90vh;
           overflow-y: auto;
-          background: rgba(15, 23, 42, 0.9);
+          background: rgba(15, 23, 42, 0.85); /* Slightly darker, solid backdrop */
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 20px;
           padding: 2.5rem;
@@ -334,11 +346,11 @@ const Experience = () => {
         }
 
         .modal-icon {
-          color: var(--accent-secondary);
-          background: rgba(129, 140, 248, 0.1);
+          color: #facc15;
+          background: rgba(250, 204, 21, 0.1);
           padding: 1rem;
           border-radius: 16px;
-          border: 1px solid rgba(129, 140, 248, 0.2);
+          border: 1px solid rgba(250, 204, 21, 0.2);
         }
 
         .modal-title {
@@ -348,7 +360,7 @@ const Experience = () => {
           margin-bottom: 0.25rem;
         }
 
-        .modal-company {
+        .modal-issuer {
           color: var(--accent-primary);
           font-size: 1.1rem;
         }
@@ -378,8 +390,9 @@ const Experience = () => {
         .modal-media {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           display: block;
+          background: rgba(0, 0, 0, 0.2);
         }
 
         .clickable-image {
@@ -437,7 +450,21 @@ const Experience = () => {
           z-index: 2001;
         }
 
-        @keyframes fadeIn { from { opacity: 0; backdrop-filter: blur(0); } to { opacity: 1; backdrop-filter: blur(8px); } }
+        .lightbox-close:hover {
+          background: rgba(239, 68, 68, 0.4);
+          transform: rotate(90deg);
+        }
+
+        @keyframes scaleUp {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; backdrop-filter: blur(0); }
+          to { opacity: 1; backdrop-filter: blur(8px); }
+        }
+
         @keyframes slideUp { 
           from { 
             opacity: 0; 
@@ -450,19 +477,25 @@ const Experience = () => {
             filter: blur(0);
           } 
         }
-        @keyframes scaleUp { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        
-        @media (max-width: 768px) {
-          .timeline::before {
-            left: 0px;
-          }
-          .timeline-item {
-            padding-left: 1.5rem;
-          }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                padding: 1.5rem;
+            }
+            .modal-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .award-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
         }
       `}</style>
     </div>
   );
 };
 
-export default Experience;
+export default Awards;

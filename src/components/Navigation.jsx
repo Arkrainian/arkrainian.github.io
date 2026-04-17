@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Briefcase, Book, Code, FolderGit2, Mail } from 'lucide-react';
+import { Home, Briefcase, Book, Code, FolderGit2, Mail, Trophy, FileText } from 'lucide-react';
 import './Navigation.css'; // We'll create this for specific nav styles
 
 const navItems = [
@@ -9,7 +9,10 @@ const navItems = [
   { path: '/skills', icon: <Code size={24} />, label: 'Skills' },
   { path: '/education', icon: <Book size={24} />, label: 'Education' },
   { path: '/projects', icon: <FolderGit2 size={24} />, label: 'Projects' },
+  { path: '/awards', icon: <Trophy size={24} />, label: 'Awards' },
+  { path: '/resume', icon: <FileText size={24} />, label: 'Resume' },
   { path: '/contact', icon: <Mail size={24} />, label: 'Contact' },
+  { path: '/admin', icon: <Briefcase size={24} />, label: 'Portal' }, // Subtle admin link
 ];
 
 const Navigation = () => {

@@ -7,6 +7,9 @@ const ProjectDetail = () => {
     const { id } = useParams();
     const project = resumeData.projects.find(p => p.id === parseInt(id));
     const videoRef = useRef(null);
+    const [enlargedImage, setEnlargedImage] = React.useState(null);
+
+    const closeEnlarged = () => setEnlargedImage(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -105,7 +108,8 @@ const ProjectDetail = () => {
                                     <img
                                         src={project.certificate.url}
                                         alt="Certificate"
-                                        className="certificate-image"
+                                        className="certificate-image clickable-image"
+                                        onClick={() => setEnlargedImage(project.certificate.url)}
                                     />
                                     <p className="certificate-caption">{project.certificate.caption}</p>
                                 </div>
@@ -141,6 +145,21 @@ const ProjectDetail = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Enlarged Image Lightbox */}
+            {enlargedImage && (
+                <div className="lightbox-overlay" onClick={closeEnlarged}>
+                    <button className="lightbox-close" onClick={closeEnlarged}>
+                        <ChevronLeft size={32} />
+                    </button>
+                    <img
+                        src={enlargedImage}
+                        alt="Enlarged view"
+                        className="lightbox-image"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
 
             <style>{`
                 .project-detail-page {
@@ -347,6 +366,83 @@ const ProjectDetail = () => {
                     font-style: italic;
                     text-align: center;
                     opacity: 0.8;
+                }
+
+                .clickable-image {
+                    cursor: zoom-in;
+                    transition: transform 0.3s ease;
+                }
+
+                .clickable-image:hover {
+                    transform: scale(1.01);
+                }
+
+                /* Lightbox Styles */
+                .lightbox-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.9);
+                    backdrop-filter: blur(10px);
+                    z-index: 2000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2rem;
+                    animation: fadeIn 0.3s ease;
+                    cursor: zoom-out;
+                }
+
+                .lightbox-image {
+                    max-width: 95vw;
+                    max-height: 90vh;
+                    object-fit: contain;
+                    border-radius: 8px;
+                    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+                    animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    cursor: default;
+                }
+
+                .lightbox-close {
+                    position: absolute;
+                    top: 2rem;
+                    right: 2rem;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: none;
+                    color: white;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    z-index: 2001;
+                }
+
+                .lightbox-close:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+
+                @keyframes fadeIn {
+                    from { opacity: 0; backdrop-filter: blur(0); }
+                    to { opacity: 1; backdrop-filter: blur(8px); }
+                }
+
+                @keyframes scaleUp {
+                    from { 
+                      opacity: 0; 
+                      transform: scale(0.9) translateY(20px); 
+                      filter: blur(5px);
+                    }
+                    to { 
+                      opacity: 1; 
+                      transform: scale(1) translateY(0); 
+                      filter: blur(0);
+                    }
                 }
 
                 @media (max-width: 768px) {

@@ -1,8 +1,10 @@
 import React from 'react';
 import { resumeData } from '../../data/resumeData';
-import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const { personalInfo } = resumeData;
@@ -90,16 +92,12 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      // Start both fades at the same time
       setIsFading(true);
       setIsTitleFading(true);
 
       setTimeout(() => {
-        // Update both indices
         setLangIndex((prev) => (prev + 1) % languages.length);
         setTitleLangIndex((prev) => (prev + 1) % titleLanguages.length);
-
-        // End both fades
         setIsFading(false);
         setIsTitleFading(false);
       }, 800);
@@ -110,10 +108,21 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Krish Sathyan | Full Stack Developer & Systems Engineer</title>
+        <meta name="description" content="Portfolio of Krish Sathyan, a Full Stack Developer specializing in Python automation, C++ systems, and interactive web experiences." />
+        <meta name="keywords" content="Krish Sathyan, Web Developer, Python, C++, Robotics, Machine Learning, Portfolio" />
+      </Helmet>
+
       <div className="page-transition">
         <section className="hero-section">
-          <div className="hero-content">
-            <div className="hero-badge">Available for hire</div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-content"
+          >
+            <div className="hero-badge blooming">Available for hire</div>
             <h1 className="hero-title">
               <span className={`gradient-text ${isTitleFading ? 'title-fading-out' : 'title-fading-in'}`}>
                 {titleLanguages[titleLangIndex].text}
@@ -123,16 +132,16 @@ const Home = () => {
             <p className="hero-description">{personalInfo.summary}</p>
 
             <div className="hero-actions">
-              <Link to="/about" className="btn btn-primary">
+              <Link to="/about" className="btn btn-primary glow-on-hover">
                 About Me
               </Link>
-              <Link to="/projects" className="btn btn-primary">
+              <Link to="/projects" className="btn btn-outline glow-on-hover">
                 View Work
               </Link>
             </div>
 
             <div className="hero-visual-inline">
-              <div className="profile-card glass-panel">
+              <div className="profile-card glass-panel floating">
                 <div className="card-header">
                   <div className="dot red"></div>
                   <div className="dot yellow"></div>
@@ -145,9 +154,14 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hero-visual">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="hero-visual"
+          >
             <div className="me-at-work-card glass-panel">
               <h3 className="card-title">{personalInfo.meAtWork.title}</h3>
               <div className="media-container">
@@ -169,7 +183,7 @@ const Home = () => {
               </div>
               <p className="media-description">{personalInfo.meAtWork.description}</p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <style>{`
@@ -318,13 +332,13 @@ const Home = () => {
           }
 
           @keyframes codeFadeIn {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
+            from { opacity: 0; transform: translateX(-20px) scale(0.95); filter: blur(5px); }
+            to { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
           }
 
           @keyframes codeFadeOut {
-            from { opacity: 1; transform: translateX(0); }
-            to { opacity: 0; transform: translateX(10px); }
+            from { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); }
+            to { opacity: 0; transform: translateX(20px) scale(0.95); filter: blur(5px); }
           }
 
           .title-fading-in {
@@ -336,13 +350,13 @@ const Home = () => {
           }
 
           @keyframes titleFadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(-20px) scale(1.1); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
           }
 
           @keyframes titleFadeOut {
-            from { opacity: 1; transform: translateY(0); }
-            to { opacity: 0; transform: translateY(10px); }
+            from { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+            to { opacity: 0; transform: translateY(20px) scale(0.9); filter: blur(10px); }
           }
 
           .keyword { color: #c678dd; }

@@ -575,6 +575,28 @@ const About = () => {
             font-size: 2rem;
           }
         }
+        /* Animation for section entrance */
+        .backstory-text-col, .backstory-media-col, .hobby-card {
+          animation: itemAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .backstory-media-col { animation-delay: 0.2s; }
+        
+        .hobby-card:nth-child(2) { animation-delay: 0.1s; }
+        .hobby-card:nth-child(3) { animation-delay: 0.2s; }
+
+        @keyframes itemAppear {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            filter: blur(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
       `}</style>
     </div>
   );

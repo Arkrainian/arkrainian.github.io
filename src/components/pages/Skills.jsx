@@ -310,11 +310,21 @@ const Skills = () => {
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            from { opacity: 0; backdrop-filter: blur(0); }
+            to { opacity: 1; backdrop-filter: blur(8px); }
         }
 
         @keyframes popIn {
-            to { transform: scale(1); }
+            from { 
+              opacity: 0; 
+              transform: scale(0.8) translateY(20px); 
+              filter: blur(5px);
+            }
+            to { 
+              opacity: 1; 
+              transform: scale(1) translateY(0); 
+              filter: blur(0);
+            }
         }
       `}</style>
     </div>

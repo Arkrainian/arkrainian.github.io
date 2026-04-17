@@ -414,7 +414,8 @@ const InstancedAsteroidField = ({ count = 10 }) => {
 
 
 const ResponsiveCamera = () => {
-    const { camera, size } = useThree();
+    const { camera, size, mouse } = useThree();
+
     useEffect(() => {
         if (size.width < 768) {
             camera.fov = 75;
@@ -423,6 +424,15 @@ const ResponsiveCamera = () => {
         }
         camera.updateProjectionMatrix();
     }, [size.width, camera]);
+
+    useFrame((state) => {
+        const targetX = state.mouse.x * 2;
+        const targetY = state.mouse.y * 2;
+        camera.position.x = THREE.MathUtils.lerp(camera.position.x, targetX, 0.05);
+        camera.position.y = THREE.MathUtils.lerp(camera.position.y, targetY, 0.05);
+        camera.lookAt(0, 0, 0);
+    });
+
     return null;
 };
 

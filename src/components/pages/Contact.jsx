@@ -68,15 +68,21 @@ const Contact = () => {
                     </div>
 
                     <div className="social-links">
-                        <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" className="social-btn">
-                            <Github size={20} />
-                        </a>
-                        <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-btn">
-                            <Linkedin size={20} />
-                        </a>
-                        <a href={personalInfo.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-btn">
-                            <Twitter size={20} />
-                        </a>
+                        {personalInfo.socials?.github && (
+                            <a href={personalInfo.socials.github.startsWith('http') ? personalInfo.socials.github : `https://${personalInfo.socials.github}`} target="_blank" rel="noopener noreferrer" className="social-btn">
+                                <Github size={20} />
+                            </a>
+                        )}
+                        {personalInfo.socials?.linkedin && (
+                            <a href={personalInfo.socials.linkedin.startsWith('http') ? personalInfo.socials.linkedin : `https://${personalInfo.socials.linkedin}`} target="_blank" rel="noopener noreferrer" className="social-btn">
+                                <Linkedin size={20} />
+                            </a>
+                        )}
+                        {personalInfo.socials?.twitter && (
+                            <a href={personalInfo.socials.twitter.startsWith('http') ? personalInfo.socials.twitter : `https://${personalInfo.socials.twitter}`} target="_blank" rel="noopener noreferrer" className="social-btn">
+                                <Twitter size={20} />
+                            </a>
+                        )}
                     </div>
                 </div>
 

@@ -11,7 +11,7 @@ const Education = () => {
     const rect = card.getBoundingClientRect();
     const windowWidth = window.innerWidth;
 
-    // If card is on right half of screen, show image on right
+    // Reverting to original logic: If card is on right half, show image on right
     // If card is on left half, show image on left
     const cardCenter = rect.left + rect.width / 2;
     const position = cardCenter > windowWidth / 2 ? 'right' : 'left';
@@ -107,6 +107,7 @@ const Education = () => {
           display: flex;
           flex-direction: column;
           gap: 4rem;
+          position: relative; /* Contain the absolute children */
         }
 
         .category-title {
@@ -225,36 +226,34 @@ const Education = () => {
           position: absolute;
           top: 50%;
           transform: translateY(-50%) scale(0);
-          width: 250px;
-          height: 180px;
+          width: 300px;
+          height: 200px;
           border-radius: 12px;
           overflow: hidden;
           opacity: 0;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           pointer-events: none;
-          z-index: 9999;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
           border: 2px solid var(--accent-primary);
         }
 
         .edu-image-overlay.right {
-          right: -20px;
+          left: calc(100% + 10px);
         }
 
         .edu-image-overlay.left {
-          left: -20px;
+          right: calc(100% + 10px);
         }
 
-        .edu-image-overlay.right {
+        .edu-card:hover .edu-image-overlay.right {
           transform: translateY(-50%) scale(1);
           opacity: 1;
-          right: -270px;
         }
 
-        .edu-image-overlay.left {
+        .edu-card:hover .edu-image-overlay.left {
           transform: translateY(-50%) scale(1);
           opacity: 1;
-          left: -270px;
         }
 
         .edu-image {
@@ -263,9 +262,46 @@ const Education = () => {
           object-fit: cover;
         }
 
+        @media (max-width: 1200px) {
+          .edu-image-overlay {
+            width: 250px;
+            height: 160px;
+          }
+        }
+
+        @media (max-width: 1000px) {
+          .edu-image-overlay {
+            /* Small pop above for medium screens */
+            width: 200px;
+            height: 140px;
+          }
+           .edu-image-overlay.right {
+            left: calc(100% + 10px);
+          }
+          .edu-image-overlay.left {
+            right: calc(100% + 10px);
+          }
+        }
+
         @media (max-width: 768px) {
           .edu-image-overlay {
-            display: none;
+            /* Full screen simplified overlay for mobile hover/tap */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            right: auto;
+            transform: translate(-50%, -50%) scale(0);
+            width: 85vw;
+            height: auto;
+            aspect-ratio: 16/9;
+            z-index: 2000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+          }
+
+          .edu-card:hover .edu-image-overlay {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
           }
         }
       `}</style>
