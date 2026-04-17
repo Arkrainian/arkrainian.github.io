@@ -12,7 +12,7 @@ const navItems = [
   { path: '/awards', icon: <Trophy size={24} />, label: 'Awards' },
   { path: '/resume', icon: <FileText size={24} />, label: 'Resume' },
   { path: '/contact', icon: <Mail size={24} />, label: 'Contact' },
-  { path: '/admin', icon: <Briefcase size={24} />, label: 'Portal' }, // Subtle admin link
+  // { path: '/admin', icon: <Briefcase size={24} />, label: 'Portal' }, // Subtle admin link
 ];
 
 const Navigation = () => {
