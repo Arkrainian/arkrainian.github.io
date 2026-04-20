@@ -116,7 +116,6 @@ export const resumeData = {
             degree: "",
             school: "Cerritos High School",
             year: "2025",
-            gpa: "4.0",
             status: "enrolled",
             url: "https://www.cerritoshs.us/",
             image: imgCerritosHigh
