@@ -555,6 +555,14 @@ export const resumeData = {
     },
     awards: [
         {
+            id: 12,
+            title: "Edison Fall Advanced Conference Outstanding",
+            issuer: "Edison Fall Advanced Conference",
+            year: "2026",
+            description: "Received an Outstanding award at the Edison Fall Advanced 2026 conference.",
+            icon: "trophy"
+        },
+        {
             id: 11,
             title: "Be Strong Student State Representative",
             issuer: "Be Strong",
