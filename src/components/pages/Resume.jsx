@@ -30,8 +30,10 @@ const Resume = () => {
   ];
 
   // Divide experience into left and right columns for optimal 1-page US Letter layout
-  const expLeft = experience.slice(0, 2); // LA Metro & Freelance Game Dev
-  const expRight = experience.slice(2);   // AI Consultant & Volunteer
+  // PDF swaps Freelance Game Dev (id 1) for PULSE; the site still lists both
+  const pdfExperience = experience.filter(exp => exp.id !== 1);
+  const expLeft = pdfExperience.slice(0, 2); // LA Metro & PULSE Regional Director
+  const expRight = pdfExperience.slice(2);   // AI Consultant & Volunteer
 
   const displayProjects = projects.filter(p => [2, 13, 3].includes(p.id));
   const displayAwards = awards.filter(a => [10, 9, 7, 5, 11].includes(a.id));

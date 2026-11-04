@@ -64,6 +64,19 @@ export const resumeData = {
             }
         },
         {
+            id: 5,
+            role: "Regional Director",
+            company: "PULSE Astrophysics Organization",
+            period: "2026 - Present",
+            description: [
+                "Appointed Regional Director of the PULSE Astrophysics Organization, leading the organization's regional presence in astrophysics and STEM.",
+                "Bridges interests in physics, astronomy, and computational science with STEM leadership and outreach."
+            ],
+            details: {
+                text: "In 2026 I was appointed Regional Director of the PULSE Astrophysics Organization. The role connects my interests in physics, astronomy, and computational science with STEM leadership."
+            }
+        },
+        {
             id: 1,
             role: "Freelance Game Developer",
             company: "Freelance",
