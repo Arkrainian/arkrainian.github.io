@@ -824,7 +824,8 @@ export const resumeData = {
                 organization: "Independent / Client Commissions",
                 period: "2023 – Present",
                 bullets: [
-                    "Engineered custom real-time physics solvers, vector-thrust aerodynamics (SU-57 simulation), and surface-normal kinematics in Luau."
+                    "Engineered custom real-time physics solvers, vector-thrust aerodynamics (SU-57 simulation), and surface-normal kinematics in Luau.",
+                    "Built procedural animation frameworks and dynamic kinematic solvers that adjust character and vehicle rigs to velocity vectors and surface angles."
                 ]
             },
             {
@@ -832,7 +833,17 @@ export const resumeData = {
                 organization: "Freelance",
                 period: "2024",
                 bullets: [
-                    "Architected an autonomous decision-making agent in Java utilizing A* pathfinding, heuristic pattern recognition, and predictive movement modeling."
+                    "Architected an autonomous decision-making agent in Java utilizing A* pathfinding, heuristic pattern recognition, and predictive movement modeling.",
+                    "Designed a modular, decoupled software architecture enabling automated testing, strategy tuning, and real-time counter-strategy adaptation."
+                ]
+            },
+            {
+                role: "Independent Systems, Aerospace & Robotics Research",
+                organization: "Personal Engineering Portfolio",
+                period: "2022 – 2025",
+                bullets: [
+                    "Congressional App Challenge (C++): Engineered a real-time N-body gravitational Solar System simulation modeling celestial mechanics.",
+                    "Cybersecurity & Robotics: Deployed a hardened Raspberry Pi WireGuard VPN gateway in Linux and built a voice-activated robot in Python with the Anki Cozmo SDK."
                 ]
             }
         ],
@@ -966,6 +977,12 @@ export const resumeData = {
                 officeOrRole: "Advanced Conference Delegate (UCLA BruinMUN 34 Outstanding, Edison Outstanding, HB Commendation)",
                 dates: "2024 – 2026",
                 description: "Earned Outstanding Delegate at UCLA BruinMUN 34 (11/8/2026) and Edison HS (10/11/2026), and Commendation at Huntington Beach HS (4/19/2026)."
+            },
+            {
+                organization: "Independent Aerospace & Game Physics Engineering",
+                officeOrRole: "Lead Creator & Simulation Developer",
+                dates: "2022 – Present",
+                description: "Designed equation-driven SU-57 fifth-generation fighter aerodynamics simulations, Python/OpenGL voxel game engines, and custom kinematic solvers."
             }
         ],
         volunteerism: [

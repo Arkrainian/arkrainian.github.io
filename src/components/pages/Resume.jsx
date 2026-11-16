@@ -307,22 +307,7 @@ const Resume = ({ defaultVersion }) => {
                 ))}
               </section>
 
-              {/* 3.Hobbies and Interests */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Compass size={13} className="kr-title-icon" /> Hobbies and Interests
-                </h3>
-                <div className="kr-hobbies-list">
-                  {secondResumeData.hobbiesAndInterests.map((hob, idx) => (
-                    <div key={idx} className="kr-hobby-row">
-                      <span className="kr-comp-label">{hob.name}: </span>
-                      <span className="kr-comp-items">{hob.detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* 4. Volunteerism */}
+              {/* 3. Volunteerism */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
                   <HeartHandshake size={13} className="kr-title-icon" /> Volunteerism
@@ -343,7 +328,7 @@ const Resume = ({ defaultVersion }) => {
 
             {/* RIGHT COLUMN */}
             <div className="kr-col">
-              {/* 5. Honors and Awards */}
+              {/* 4. Honors and Awards */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
                   <Trophy size={13} className="kr-title-icon" /> Honors and Awards
@@ -361,7 +346,7 @@ const Resume = ({ defaultVersion }) => {
                 ))}
               </section>
 
-              {/* 6. Skills and Certifications, including Computer Competencies */}
+              {/* 5. Skills and Certifications, including Computer Competencies */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
                   <Cpu size={13} className="kr-title-icon" /> Skills and Certifications, including Computer Competencies
@@ -382,7 +367,7 @@ const Resume = ({ defaultVersion }) => {
                 ))}
               </section>
 
-              {/* 7. Memberships and Extracurricular Activities (including offices held and dates) */}
+              {/* 6. Memberships and Extracurricular Activities (including offices held and dates) */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
                   <Users size={13} className="kr-title-icon" /> Memberships and Extracurricular Activities
@@ -397,6 +382,21 @@ const Resume = ({ defaultVersion }) => {
                     <p className="kr-item-desc">{mem.description}</p>
                   </div>
                 ))}
+              </section>
+
+              {/* 7. Hobbies and Interests */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Compass size={13} className="kr-title-icon" /> Hobbies and Interests
+                </h3>
+                <div className="kr-hobbies-list">
+                  {secondResumeData.hobbiesAndInterests.map((hob, idx) => (
+                    <div key={idx} className="kr-hobby-row">
+                      <span className="kr-comp-label">{hob.name}: </span>
+                      <span className="kr-comp-items">{hob.detail}</span>
+                    </div>
+                  ))}
+                </div>
               </section>
             </div>
           </div>
@@ -497,14 +497,16 @@ const Resume = ({ defaultVersion }) => {
           max-height: 11in;
           background: #ffffff;
           color: #0f172a;
-          padding: 0.25in 0.32in;
+          padding: 0.26in 0.32in;
           box-shadow: 0 20px 50px rgba(0,0,0,0.6);
           position: relative;
-          font-size: 7.5pt;
-          line-height: 1.22;
+          font-size: 7.6pt;
+          line-height: 1.24;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           box-sizing: border-box;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
 
         /* Blue Theme Header Banner matching Website Palette */
@@ -569,13 +571,22 @@ const Resume = ({ defaultVersion }) => {
         }
 
         .kr-grid {
+          flex: 1;
           display: grid;
           grid-template-columns: 1.02fr 1fr;
-          gap: 0.8rem;
+          gap: 0.85rem;
+          align-items: stretch;
+        }
+
+        .kr-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
         }
 
         .kr-section {
-          margin-bottom: 0.38rem;
+          margin-bottom: 0.2rem;
           page-break-inside: avoid;
           break-inside: avoid;
         }
@@ -818,13 +829,18 @@ const Resume = ({ defaultVersion }) => {
           }
 
           .kr-grid {
+            flex: 1 !important;
             display: flex !important;
             flex-direction: row;
-            gap: 0.8rem;
+            gap: 0.85rem;
+            align-items: stretch !important;
           }
           
           .kr-col {
             flex: 1;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: space-between !important;
           }
         }
 
