@@ -46,6 +46,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/resume" element={<Resume />} />
+              <Route path="/resume-2" element={<Resume defaultVersion={2} />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Layout>

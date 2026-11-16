@@ -744,5 +744,190 @@ export const resumeData = {
                 "Self-Motivated"
             ]
         }
+    },
+    secondResumeData: {
+        name: "Krish Sathyan",
+        subtitle: "Software Engineering, Machine Learning Research & Computational Physics",
+        researchAndWorkExperience: [
+            {
+                role: "Graphic Design Intern (Paid Internship)",
+                organization: "LA Metro (Los Angeles County Metropolitan Transportation Authority)",
+                period: "2026",
+                bullets: [
+                    "Produced high-impact digital assets, data visualizations, and promotional infographics for collaborative agency initiatives.",
+                    "Translated complex public transit data into accessible visual communications adhering strictly to LA Metro brand guidelines."
+                ]
+            },
+            {
+                role: "Student Researcher — Machine Learning & Astrophysics Capstones",
+                organization: "UC Irvine (UCI) Donald Bren School of Information & Computer Sciences Summer Academy",
+                period: "Summer 2025",
+                bullets: [
+                    "Glioma Detection Research: Engineered a dual-stream neural network (custom residual CNN + gradient-boosted decision trees) combining 3D MRI scans and clinical records to detect brain tumors with high F1 sensitivity.",
+                    "Astrophysics Stellar Classification Research: Built predictive models in Python and R using stellar spectral parameters and Hertzsprung-Russell diagrams to classify stars across spectral types (O, B, A, F, G, K, M)."
+                ]
+            },
+            {
+                role: "Freelance Game Developer & Physics Simulation Engineer",
+                organization: "Independent / Client Commissions",
+                period: "2023 – Present",
+                bullets: [
+                    "Engineered custom real-time physics solvers, vector-thrust aerodynamics (SU-57 simulation), and surface-normal kinematics in Luau.",
+                    "Built procedural animation rigs and modular gameplay architectures optimized for frame-accurate client performance."
+                ]
+            },
+            {
+                role: "AI Development Consultant",
+                organization: "Freelance",
+                period: "2024",
+                bullets: [
+                    "Architected an autonomous decision-making agent in Java utilizing A* pathfinding, heuristic pattern recognition, and predictive movement modeling."
+                ]
+            }
+        ],
+        academicExperience: [
+            {
+                institution: "Cerritos High School",
+                program: "High School Diploma Track (Coursework in Computer Science, Advanced Mathematics & Physics)",
+                period: "2022 – 2026 (Currently Enrolled)",
+                details: "Engineered a C++ N-Body Celestial Mechanics Solar System simulation for the Congressional App Challenge."
+            },
+            {
+                institution: "University of California, Irvine (UCI) — ICS Summer Academy",
+                program: "Intensive Academic Programs in Machine Learning & Data Science",
+                period: "2025",
+                details: "Completed university-level training in neural network architectures, statistical inference, data wrangling, and predictive modeling in Python and R."
+            },
+            {
+                institution: "iD Tech / NVIDIA Deep Learning Academy (Hosted at UC Irvine)",
+                program: "GPU-Accelerated Computing & Machine Learning Program",
+                period: "2023 – 2024",
+                details: "Trained computer vision, sentiment analysis, and reinforcement learning models using the NVIDIA software stack and Google Colab."
+            },
+            {
+                institution: "Harvard University (CS50x — Self-Study)",
+                program: "CS50: Introduction to Computer Science",
+                period: "2023",
+                details: "Mastered C, Python, low-level memory allocation, pointers, data structures, and algorithmic complexity."
+            }
+        ],
+        honorsAndAwards: [
+            {
+                title: "Edison Fall Advanced Conference Outstanding Award",
+                issuer: "Edison Fall Advanced Model United Nations Conference",
+                year: "2026"
+            },
+            {
+                title: "Glioma Detection Capstone Award",
+                issuer: "UCI Machine Learning Summer Academy",
+                year: "2025"
+            },
+            {
+                title: "Stellar Classification Capstone Award",
+                issuer: "UCI Data Science Summer Academy",
+                year: "2025"
+            },
+            {
+                title: "Huntington Beach Advanced Conference Commendation (Surf City XXIII)",
+                issuer: "Model United Nations — Disarmament & International Security Committee (DISEC)",
+                year: "2025"
+            },
+            {
+                title: "Be Strong Student State Representative Appointment",
+                issuer: "Be Strong National Organization",
+                year: "2025"
+            },
+            {
+                title: "Certificate of Volunteer Appreciation",
+                issuer: "Cerritos High School (Hour Power Tutoring Program)",
+                year: "2024 – 2025"
+            }
+        ],
+        skillsAndCertifications: {
+            certifications: [
+                "Certification in Machine Learning — UC Irvine ICS Summer Academy (2025)",
+                "Certification in Data Science — UC Irvine ICS Summer Academy (2025)",
+                "Certificate of Completion in GPU-Accelerated Machine Learning — NVIDIA Deep Learning Institute / iD Tech (2024)",
+                "CS50: Introduction to Computer Science — Harvard University (2023)"
+            ],
+            computerCompetencies: [
+                {
+                    category: "Programming Languages",
+                    items: "Python (NumPy, Pandas, TensorFlow, PyTorch), C++, C, R, Java, Luau, JavaScript (ES6+), TypeScript, HTML5/CSS3, GLSL"
+                },
+                {
+                    category: "Systems, Hardware & Frameworks",
+                    items: "React, Node.js, Next.js, Three.js, OpenGL, CUDA (GPU Computing), Linux Administration, Raspberry Pi, WireGuard VPN, iptables, Anki Cozmo Robotics SDK, Git"
+                },
+                {
+                    category: "Design & Media Competencies",
+                    items: "Adobe Creative Suite, UI/UX Prototyping, Blender (3D Modeling & Animation), Data Visualization & Infographics"
+                }
+            ]
+        },
+        membershipsAndExtracurriculars: [
+            {
+                organization: "PULSE Astrophysics Organization",
+                officeOrRole: "Appointed Regional Director",
+                dates: "2026 – Present",
+                description: "Lead the organization's regional presence in astrophysics and STEM, bridging physics, astronomy, and computational science with youth outreach."
+            },
+            {
+                organization: "Be Strong National Student Movement",
+                officeOrRole: "Appointed Student State Representative",
+                dates: "2025 – Present",
+                description: "Serve as an official state representative leading peer outreach, mental health advocacy, inclusion initiatives, and anti-bullying programs."
+            },
+            {
+                organization: "CyberPatriot — Air & Space Forces Association National Youth Cyber Defense Competition",
+                officeOrRole: "Gold Team Cyber Defense Competitor (Cypress College P.A.C.E. — CyberPatriot XVII & XVIII)",
+                dates: "2024 – 2025",
+                description: "Secured Windows and Linux virtual networks, hardened OS configurations, audited user policies, and configured firewalls against simulated threats."
+            },
+            {
+                organization: "Model United Nations (MUN)",
+                officeOrRole: "Committee Delegate — DISEC (Surf City XXIII Commendation & Edison Fall Outstanding)",
+                dates: "2024 – 2026",
+                description: "Represented member states in international security debates, coalition building, and resolution drafting across advanced MUN conferences."
+            }
+        ],
+        volunteerism: [
+            {
+                role: "Hour Power Peer Tutor",
+                organization: "Cerritos High School",
+                dates: "2024 – 2025",
+                description: "Volunteered extensive after-school hours tutoring peers in STEM and academic subjects, fostering collaborative learning and earning official recognition."
+            },
+            {
+                role: "Science Experiment & STEM Outreach Volunteer",
+                organization: "Cerritos Elementary School",
+                dates: "2025",
+                description: "Led interactive physics and magnetism experiments for elementary school students, translating scientific principles into engaging hands-on lessons."
+            },
+            {
+                role: "Student Resilience & Community Inclusion Advocate",
+                organization: "Be Strong",
+                dates: "2025 – Present",
+                description: "Organized peer-support initiatives and student wellness awareness campaigns within the school community."
+            }
+        ],
+        hobbiesAndInterests: [
+            {
+                name: "Culinary Arts & Traditional Beverages",
+                detail: "Preparing slow-cooked brisket, seared salmon, and artisanal dishes; brewing authentic Indian chai, Krishna coffee, and South Indian filter coffee."
+            },
+            {
+                name: "Astrophysics & Space Exploration",
+                detail: "Stargazing, studying orbital mechanics, and modeling N-body gravitational systems in C++."
+            },
+            {
+                name: "3D Art & Procedural Animation",
+                detail: "Creating interactive 3D environments and shaders using Blender, Three.js, and OpenGL."
+            },
+            {
+                name: "Aerodynamics & Game Physics",
+                detail: "Reverse-engineering flight dynamics, polynomial drag curves, and real-time kinematic solvers."
+            }
+        ]
     }
 };
