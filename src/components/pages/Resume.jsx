@@ -75,7 +75,7 @@ const Resume = ({ defaultVersion }) => {
   // Resume 1: Show LA Metro, PULSE Regional Director, and AI Consultant under Work & Leadership Experience
   const pdfWorkExperience = experience.filter((exp) => ![1, 3].includes(exp.id));
   const displayProjects = projects.filter((p) => [2, 13, 3].includes(p.id));
-  const displayAwards = awards.filter((a) => [12, 10, 9, 6, 5, 11].includes(a.id));
+  const displayAwards = awards;
 
   // Skills formatted for Kickresume progress bars
   const programmingSkills = [
@@ -237,10 +237,10 @@ const Resume = ({ defaultVersion }) => {
                 <h3 className="kr-section-title">
                   <Trophy size={14} className="kr-title-icon" /> Honors, Awards & Extracurriculars
                 </h3>
-                {displayAwards.slice(0, 5).map((award) => (
+                {displayAwards.map((award) => (
                   <div key={award.id} className="kr-award-item-compact">
-                    <span className="kr-item-title">
-                      {award.title} <span className="kr-award-issuer">({award.issuer})</span>
+                    <span className="kr-award-line">
+                      <strong>{award.title}</strong> <span className="kr-award-issuer">— {award.issuer}</span>
                     </span>
                     <span className="kr-item-date-inline">{award.year}</span>
                   </div>
@@ -405,12 +405,14 @@ const Resume = ({ defaultVersion }) => {
                   <Trophy size={14} className="kr-title-icon" /> Honors and Awards
                 </h3>
                 {secondResumeData.honorsAndAwards.map((hon, idx) => (
-                  <div key={idx} className="kr-item kr-item-tight">
-                    <div className="kr-item-header">
-                      <h4 className="kr-item-title">{hon.title}</h4>
-                      <span className="kr-item-date-inline">{hon.year}</span>
-                    </div>
-                    <div className="kr-item-sub">{hon.issuer}</div>
+                  <div key={idx} className="kr-award-item-compact">
+                    <span className="kr-award-line">
+                      <strong>{hon.title}</strong>{' '}
+                      {hon.issuer && !hon.title.includes(hon.issuer) && (
+                        <span className="kr-award-issuer">— {hon.issuer}</span>
+                      )}
+                    </span>
+                    <span className="kr-item-date-inline">{hon.year}</span>
                   </div>
                 ))}
               </section>
@@ -767,7 +769,13 @@ const Resume = ({ defaultVersion }) => {
           justify-content: space-between;
           align-items: baseline;
           gap: 0.3rem;
-          margin-bottom: 0.16rem;
+          margin-bottom: 0.1rem;
+        }
+
+        .kr-award-line {
+          font-size: 7pt;
+          line-height: 1.15;
+          color: #0f172a;
         }
 
         /* Blue Kickresume Skills Progress Bars */

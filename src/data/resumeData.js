@@ -29,7 +29,7 @@ export const resumeData = {
         title: "Software Engineer & Graphic Designer",
         email: "krishsathyan@gmail.com",
         location: "Los Angeles, CA",
-        summary: "Results-oriented Software Engineer and Graphic Design Intern with proven expertise in Python automation, C++ high-performance systems, machine learning models, and digital media design. Demonstrated success producing visual branding and graphic assets for LA Metro, engineering complex physics simulations, developing AI models at UCI, and competing in national cybersecurity competitions.",
+        summary: "Results-oriented Software Engineer, Graphic Design Intern, and PULSE Astrophysics Regional Director with proven expertise in Python automation, C++ high-performance systems, machine learning models, and digital media design. Demonstrated success earning Certification of Completion at Los Angeles Metro, winning Capstone Research Awards in Machine Learning and Astrophysics at UC Irvine, competing as a CyberPatriot XVIII Gold Semifinalist, and earning Outstanding Delegate honors at UCLA BruinMUN 34 and Edison Model UN.",
         socials: {
             github: "github.com/Arkrainian",
         },
@@ -126,24 +126,43 @@ export const resumeData = {
             image: imgCerritosHigh
         },
         {
+            id: 6,
+            degree: "Certification of Completion of Internship",
+            school: "Los Angeles Metro",
+            year: "7/31/2026",
+            status: "completed",
+            url: "https://www.metro.net/",
+            description: "Completed a paid Graphic Design Internship at Los Angeles County Metropolitan Transportation Authority (LA Metro), creating visual communications, digital assets, and transit infographics."
+        },
+        {
             id: 1,
-            degree: "Certification in Machine Learning",
-            school: "UCI ICS Summer Academy",
-            year: "2025",
+            degree: "Certification in Machine Learning (Glioma Detection Capstone Award)",
+            school: "UC Irvine ICS Summer Academy",
+            year: "7/25/2025",
             status: "completed",
             url: "https://uci.edu/",
-            description: "Attended the UC Irvine ICS Summer Academy, earning a certificate in Machine Learning by developing dual-stream neural nets and predictive models in Python using Google Colab.",
+            description: "Attended the UC Irvine ICS Summer Academy, earning a certificate and Capstone Award in Machine Learning by developing dual-stream neural nets and predictive models in Python using Google Colab.",
             image: imgUCIHall
         },
         {
             id: 2,
-            degree: "Certification in Data Science",
-            school: "UCI ICS Summer Academy",
-            year: "2025",
+            degree: "Certification in Data Science (Stellar Classification Capstone Award)",
+            school: "UC Irvine ICS Summer Academy",
+            year: "7/18/2025",
             status: "completed",
             url: "https://uci.edu/",
-            description: "Earned a certificate in Data Science through hands-on statistical modeling, data wrangling, visualization, and inference in R.",
+            description: "Earned a certificate and Capstone Award in Data Science through hands-on statistical modeling, data wrangling, visualization, and astrophysical inference in Python and R.",
             image: imgUCIHall
+        },
+        {
+            id: 5,
+            degree: "Certificate in Artificial Intelligence and Machine Learning",
+            school: "NVIDIA / iD Tech",
+            year: "6/30/2024",
+            status: "completed",
+            url: "https://www.nvidia.com/",
+            description: "Participated in an intensive AI & Machine Learning program exploring GPU-accelerated computing and neural network optimization using the NVIDIA software stack.",
+            image: imgIDTechLogo
         },
         {
             id: 4,
@@ -154,16 +173,6 @@ export const resumeData = {
             description: "Independently self-studied Python and C through Harvard’s CS50, mastering data structures, memory allocation, pointers, algorithms, and low-level program execution.",
             url: "https://cs50.harvard.edu/",
             image: "https://www.classcentral.com/report/wp-content/uploads/2022/05/cs50-2023-banner-e1673610020393.png"
-        },
-        {
-            id: 5,
-            degree: "Certification in Machine Learning",
-            school: "iD Tech / NVIDIA",
-            year: "2023",
-            status: "completed",
-            url: "https://www.idtech.com/",
-            description: "Participated in an intensive Machine Learning program exploring GPU-accelerated computing and neural network optimization using the NVIDIA software stack.",
-            image: imgIDTechLogo
         }
     ],
     skills: [
@@ -469,6 +478,24 @@ export const resumeData = {
         ],
         timeline: [
             {
+                year: "2026",
+                title: "LA Metro Graphic Design Internship & Certification",
+                description: "Completed a paid Graphic Design Internship at Los Angeles Metro (7/31/2026), producing high-impact visual communications, digital assets, and transit infographics.",
+                image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                year: "2026",
+                title: "PULSE Astrophysics Regional Director & MUN Honors",
+                description: "Appointed Regional Director of the PULSE Astrophysics Organization and earned Outstanding awards at UCLA's BruinMUN 34 (11/8/2026) and Edison Advanced Conference (10/11/2026), plus Huntington Beach Commendation (4/19/2026).",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+            },
+            {
+                year: "2026",
+                title: "CyberPatriot XVIII Gold / Semifinalist",
+                description: "Advanced to Gold Tier Semifinalist (1/17/2026) and Gold (1/18/2026) with the Cypress College P.A.C.E. team in the Air & Space Forces Association National Youth Cyber Defense Competition.",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
+            },
+            {
                 year: "2025",
                 title: "Modern Interactive Interfaces",
                 description: "Specializing in premium web experiences by integrating Three.js and custom GLSL shaders to create immersive, 3D-driven user interfaces and animations.",
@@ -477,7 +504,7 @@ export const resumeData = {
             {
                 year: "2025",
                 title: "AI Research & Implementation",
-                description: "Collaborated with experts at the UCI Summer Academy to explore neural networks and machine learning models, focusing on data-driven decision-making systems.",
+                description: "Collaborated with experts at the UCI ICS Summer Academy to explore neural networks and machine learning models, earning Capstone Awards in Glioma Detection (7/25/2025) and Stellar Classification (7/18/2025).",
                 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80"
             },
             {
@@ -555,22 +582,89 @@ export const resumeData = {
     },
     awards: [
         {
+            id: 14,
+            title: "Outstanding — UCLA's BruinMUN 34 Advanced Conference",
+            issuer: "UCLA's BruinMUN 34 Advanced Conference (Model UN)",
+            year: "11/8/2026",
+            description: "Awarded Outstanding Delegate at UCLA's 34th annual BruinMUN Advanced Model United Nations Conference.",
+            icon: "trophy",
+            details: {
+                text: "Earned the Outstanding Delegate award at UCLA's BruinMUN 34 Advanced Conference (Model UN) on November 8, 2026, recognized for excellence in diplomatic negotiation, policy analysis, caucus leadership, and resolution drafting."
+            }
+        },
+        {
             id: 12,
-            title: "Edison Fall Advanced Conference Outstanding",
-            issuer: "Edison Fall Advanced Conference",
-            year: "2026",
-            description: "Received an Outstanding award at the Edison Fall Advanced 2026 conference.",
-            icon: "trophy"
+            title: "Outstanding — Edison High School Advanced Conference",
+            issuer: "Edison High School Advanced Conference (Model UN)",
+            year: "10/11/2026",
+            description: "Awarded Outstanding Delegate at the Edison High School Advanced Model United Nations Conference.",
+            icon: "trophy",
+            details: {
+                text: "Received the Outstanding Delegate award at the Edison High School Advanced Conference (Model UN) on October 11, 2026, demonstrating strong parliamentary debate, coalition building, and strategic resolution authorship."
+            }
+        },
+        {
+            id: 13,
+            title: "Certification of Completion of Internship",
+            issuer: "Los Angeles Metro",
+            year: "7/31/2026",
+            description: "Awarded Certification of Completion for the paid Graphic Design Internship at Los Angeles County Metropolitan Transportation Authority.",
+            icon: "award",
+            details: {
+                text: "Awarded the official Certification of Completion of Internship by Los Angeles Metro on July 31, 2026, recognizing successful delivery of high-impact visual branding, digital assets, and public transit infographics."
+            }
+        },
+        {
+            id: 6,
+            title: "Commendation — Huntington Beach High School Advanced Conference",
+            issuer: "Huntington Beach High School Advanced Conference (Model UN)",
+            year: "4/19/2026",
+            description: "Awarded Commendation for outstanding diplomatic performance and contributions at the Huntington Beach High School Advanced Conference (Model UN).",
+            icon: "award",
+            details: {
+                text: "Awarded a Commendation at the Huntington Beach High School Advanced Model United Nations Conference (4/19/2026). Representing Albania in the Disarmament and International Security Committee (DISEC), I engaged in rigorous debate, diplomatic negotiation, and collaborative resolution drafting to address complex global security challenges.",
+                media: [
+                    { type: 'image', url: imgHB }
+                ]
+            }
+        },
+        {
+            id: 4,
+            title: "Gold — CyberPatriot XVII",
+            issuer: "CyberPatriot XVII (Air & Space Forces Association), Cypress College P.A.C.E. team",
+            year: "1/18/2026",
+            description: "Earned Gold tier recognition in the Air & Space Forces Association's National Youth Cyber Defense Competition with the Cypress College P.A.C.E. team.",
+            icon: "star",
+            details: {
+                text: "Earned Gold tier recognition in CyberPatriot XVII (1/18/2026) with the Cypress College P.A.C.E. team. Identified and mitigated cybersecurity vulnerabilities across Windows and Linux operating systems, hardening system configurations, managing user policies, and implementing firewall rules.",
+                media: [
+                    { type: 'image', url: imgCyber17 }
+                ]
+            }
+        },
+        {
+            id: 5,
+            title: "Gold / Semifinalist — CyberPatriot XVIII",
+            issuer: "CyberPatriot XVIII (Air & Space Forces Association), Cypress College P.A.C.E. team",
+            year: "1/17/2026",
+            description: "Advanced to Gold / Semifinalist in the premier national high school cyber defense competition with the Cypress College P.A.C.E. team.",
+            icon: "trophy",
+            details: {
+                text: "Advanced to Gold / Semifinalist in CyberPatriot XVIII (1/17/2026) serving on the Cypress College P.A.C.E. team. Collaborated with peers to secure complex virtual networks and defend against advanced cybersecurity vulnerabilities in system administration and incident response.",
+                media: [
+                    { type: 'image', url: imgCyber18 }
+                ]
+            }
         },
         {
             id: 11,
-            title: "Be Strong Student State Representative",
+            title: "Student State Representative",
             issuer: "Be Strong",
-            year: "2025",
-            description: "Appointed as an official Be Strong Student State Representative to help foster resilience.",
+            year: "9/22/2025",
+            description: "Appointed as an official Be Strong Student State Representative to foster resilience, inclusion, and anti-bullying initiatives.",
             icon: "award",
             details: {
-                text: "Appointed as an official Be Strong Student State Representative, actively working to foster resilience, promote inclusion, and prevent bullying within the student community. Through this role, I advocate for mental health awareness and empower peers to create a supportive and positive school environment.",
+                text: "Appointed as an official Be Strong Student State Representative (9/22/2025), actively working to foster resilience, promote inclusion, and prevent bullying within the student community. Through this role, I advocate for mental health awareness and empower peers to create a supportive and positive school environment.",
                 media: [
                     { type: 'image', url: imgBeStrong }
                 ]
@@ -578,13 +672,13 @@ export const resumeData = {
         },
         {
             id: 10,
-            title: "Glioma Detection Capstone Award (UCI/ICS)",
-            issuer: "UCI Machine Learning Summer Academy",
-            year: "2025",
+            title: "Glioma Detection Capstone Award",
+            issuer: "UC Irvine ICS Summer Academy",
+            year: "7/25/2025",
             description: "Recognized for engineering a dual-stream neural network for early glioma detection using MRI and clinical records.",
             icon: "trophy",
             details: {
-                text: "Awarded for a research-oriented project focusing on deep learning architectures for brain tumor detection. The solution utilized a custom-tuned CNN with residual connections for high-resolution MRI data and gradient-boosted decision trees for metabolic markers, achieving a robust F1-score.",
+                text: "Awarded on 7/25/2025 at the UC Irvine ICS Summer Academy for a research-oriented project focusing on deep learning architectures for brain tumor detection. The solution utilized a custom-tuned CNN with residual connections for high-resolution MRI data and gradient-boosted decision trees for metabolic markers, achieving a robust F1-score.",
                 media: [
                     { type: 'image', url: imgAIML },
                     { type: 'video', url: 'https://www.youtube.com/embed/dGgaHxOpxM4' }
@@ -593,13 +687,13 @@ export const resumeData = {
         },
         {
             id: 9,
-            title: "Stellar Classification Capstone Award (UCI/ICS)",
-            issuer: "UCI Data Science Summer Academy",
-            year: "2025",
+            title: "Stellar Classification Capstone Award",
+            issuer: "UC Irvine ICS Summer Academy",
+            year: "7/18/2025",
             description: "Awarded for developing a robust predictive model to categorize stars into spectral classes using astrophysical data.",
             icon: "star",
             details: {
-                text: "Honored for the Astrophysics Stellar Classification Capstone Project. The project involved parsing vast datasets to classify stars, generating Hertzsprung-Russell diagrams, and optimizing deep learning models to present clear, data-driven conclusions on stellar parameters.",
+                text: "Honored on 7/18/2025 at the UC Irvine ICS Summer Academy for the Astrophysics Stellar Classification Capstone Project. The project involved parsing vast datasets to classify stars, generating Hertzsprung-Russell diagrams, and optimizing predictive models to present clear, data-driven conclusions on stellar parameters.",
                 media: [
                     { type: 'image', url: imgDataAnalytics },
                     { type: 'video', url: 'https://www.youtube.com/embed/KZWtHlS1epw' }
@@ -607,74 +701,32 @@ export const resumeData = {
             }
         },
         {
-            id: 6,
-            title: "Huntington Beach Advanced Conference Commendation",
-            issuer: "Huntington Beach Advanced Conference",
-            year: "2025",
-            description: "Commendation for outstanding performance and contributions at the Huntington Beach Advanced Conference.",
-            icon: "award",
-            details: {
-                text: "Awarded a Commendation at the Huntington Beach High School Model United Nations Surf City XXIII conference. Representing Albania in the Disarmament and International Security Committee (DISEC), I engaged in rigorous debate, diplomatic negotiation, and collaborative resolution drafting to address complex global security challenges.",
-                media: [
-                    { type: 'image', url: imgHB }
-                ]
-            }
-        },
-        {
-            id: 5,
-            title: "CyberPatriot XVIII",
-            issuer: "Air & Space Forces Association",
-            year: "2025",
-            description: "Participated in the premier national high school cyber defense competition, demonstrating expertise in system hardening and network security.",
-            icon: "trophy",
-            details: {
-                text: "Participated in the premier national high school cyber defense competition, CyberPatriot XVIII. Serving on the Gold Team from Cypress College (P.A.C.E.), I collaborated with peers to secure complex virtual networks and defend against advanced cybersecurity vulnerabilities, further developing my expertise in system administration and incident response.",
-                media: [
-                    { type: 'image', url: imgCyber18 }
-                ]
-            }
-        },
-        {
             id: 8,
-            title: "Hour Power Tutor",
-            issuer: "Cerritos High School",
-            year: "2024-2025",
-            description: "Dedicated time to tutor peers and students in various subjects, fostering a collaborative learning environment and helping others succeed academically.",
+            title: "Tutor Recognition",
+            issuer: "Hour Power",
+            year: "5/12/2025",
+            description: "Recognized for dedicating time to tutor peers across academic subjects during the Hour Power program at Cerritos High School.",
             icon: "award",
             details: {
-                text: "Recognized with a Certificate of Volunteer Appreciation for dedicating countless hours to tutoring peers during the Hour Power program at Cerritos High School. This experience allowed me to foster a collaborative learning environment, help fellow students succeed academically in various subjects, and develop strong communication and mentorship skills.",
+                text: "Recognized with Tutor Recognition (5/12/2025) for dedicating countless hours to tutoring peers during the Hour Power program at Cerritos High School. This experience allowed me to foster a collaborative learning environment, help fellow students succeed academically, and develop strong mentorship skills.",
                 media: [
                     { type: 'image', url: imgHourPower }
                 ]
             }
         },
         {
-            id: 4,
-            title: "CyberPatriot XVII",
-            issuer: "Air & Space Forces Association",
-            year: "2024",
-            description: "Competed in the National Youth Cyber Defense Competition, securing Windows and Linux systems, configuring firewalls, and managing user policies.",
-            icon: "star",
-            details: {
-                text: "Competed in the Air & Space Forces Association's National Youth Cyber Defense Competition. My team and I identified and mitigated cybersecurity vulnerabilities across various operating systems, including Windows and Linux. I gained hands-on experience in hardening system configurations, managing user policies, and implementing firewall rules to secure networks against simulated cyber threats.",
-                media: [
-                    { type: 'image', url: imgCyber17 }
-                ]
-            }
-        },
-        {
             id: 7,
-            title: "IDTech Nvidia ML Class Project",
-            issuer: "iD Tech / NVIDIA",
-            year: "2024",
-            description: "Completed an intensive Machine Learning program, utilizing the NVIDIA software stack to develop a suite of ML applications.",
+            title: "Certificate in Artificial Intelligence and Machine Learning",
+            issuer: "NVIDIA",
+            year: "6/30/2024",
+            description: "Earned NVIDIA's Certificate in Artificial Intelligence and Machine Learning utilizing the NVIDIA GPU software stack.",
             icon: "star",
             certificate: {
                 url: "https://images.credential.net/embed/ybcaihvu_1743533401973_77d057037d63cc318fb58f705f55d51d6f405af356f6b35442087da89c5bdfe9.png",
-                caption: "Certificate of Completion - NVIDIA Deep Learning Institute"
+                caption: "Certificate in Artificial Intelligence and Machine Learning - NVIDIA"
             },
             details: {
-                text: "Participated in an intensive Machine Learning program exploring GPU-accelerated computing using the NVIDIA software stack. The curriculum involved deep dives into neural network architectures, utilizing NVIDIA's specialized libraries to optimize the training of computer vision models. I developed a suite of ML applications covering image recognition, sentiment analysis, and reinforced learning systems.",
+                text: "Awarded the Certificate in Artificial Intelligence and Machine Learning by NVIDIA (6/30/2024). Explored GPU-accelerated computing and neural network architectures, utilizing NVIDIA's specialized libraries to optimize computer vision, sentiment analysis, and reinforcement learning models.",
                 media: [
                     { type: 'video', url: 'https://www.youtube.com/embed/j-lUg7wPf-w' },
                     { type: 'image', url: imgNvidiaCert }
@@ -703,11 +755,11 @@ export const resumeData = {
             showSummary: true,
             showExperience: true,
             showEducation: true,
-            selectedEducationIds: [3, 1, 2, 5, 4], // Cerritos (3), UCI ML (1), UCI Data Science (2)
+            selectedEducationIds: [3, 6, 1, 2, 5, 4],
             showSkills: true,
             showAwards: true,
-            selectedAwardIds: [7, 10, 9, 5, 4], // Added CyberPatriot XVIII (5) and XVII (4)
-            awardLimit: 5,
+            selectedAwardIds: [14, 12, 13, 6, 4, 5, 11, 10, 9, 8, 7],
+            awardLimit: 11,
             showProjects: true,
             selectedProjectIds: [2, 13, 3],
             projectLimit: 3,
@@ -722,12 +774,12 @@ export const resumeData = {
             },
             showHighlights: true,
             summaryHighlights: [
-                "LA Metro Paid Graphic Design Intern (2026): Produced digital media, infographics, and visual branding.",
-                "UCI Machine Learning Academy Award: Glioma Detection Dual-Stream Neural Network.",
-                "UCI Data Science Academy Winner: Stellar Classification Astrophysical Predictive Model.",
-                "Congressional App Challenge Submission: C++ N-Body Celestial Mechanics Simulation Engine.",
-                "NVIDIA Deep Learning Institute Certification in GPU Accelerated Computing.",
-                "CyberPatriot National Cyber Defense Competitor (Gold Team) & Be Strong Student Representative."
+                "LA Metro Paid Graphic Design Intern (7/31/2026): Certification of Completion of Internship.",
+                "UCLA BruinMUN 34 (11/8/2026) & Edison MUN (10/11/2026): Outstanding Delegate Awards.",
+                "UCI ICS Summer Academy (7/2025): Glioma Detection & Stellar Classification Capstone Awards.",
+                "CyberPatriot XVIII Gold / Semifinalist (1/17/2026) & CyberPatriot XVII Gold (1/18/2026).",
+                "NVIDIA Certificate in Artificial Intelligence and Machine Learning (6/30/2024).",
+                "PULSE Astrophysics Regional Director & Be Strong Student State Representative (9/22/2025)."
             ],
             strengths: [
                 "Analytical",
@@ -750,9 +802,9 @@ export const resumeData = {
         subtitle: "Software Engineering, Machine Learning Research & Computational Physics",
         researchAndWorkExperience: [
             {
-                role: "Graphic Design Intern (Paid Internship)",
-                organization: "LA Metro (Los Angeles County Metropolitan Transportation Authority)",
-                period: "2026",
+                role: "Graphic Design Intern (Paid Internship — Certification of Completion)",
+                organization: "Los Angeles Metro (LA County Metropolitan Transportation Authority)",
+                period: "Completed 7/31/2026",
                 bullets: [
                     "Produced high-impact digital assets, data visualizations, and promotional infographics for collaborative agency initiatives.",
                     "Translated complex public transit data into accessible visual communications adhering strictly to LA Metro brand guidelines."
@@ -760,11 +812,11 @@ export const resumeData = {
             },
             {
                 role: "Student Researcher — Machine Learning & Astrophysics Capstones",
-                organization: "UC Irvine (UCI) Donald Bren School of Information & Computer Sciences Summer Academy",
-                period: "Summer 2025",
+                organization: "UC Irvine (UCI) ICS Summer Academy",
+                period: "7/2025",
                 bullets: [
-                    "Glioma Detection Research: Engineered a dual-stream neural network (custom residual CNN + gradient-boosted decision trees) combining 3D MRI scans and clinical records to detect brain tumors with high F1 sensitivity.",
-                    "Astrophysics Stellar Classification Research: Built predictive models in Python and R using stellar spectral parameters and Hertzsprung-Russell diagrams to classify stars across spectral types (O, B, A, F, G, K, M)."
+                    "Glioma Detection Research (7/25/2025): Engineered a dual-stream neural network (residual CNN + gradient-boosted trees) combining 3D MRI scans and clinical records.",
+                    "Stellar Classification Research (7/18/2025): Built predictive models in Python and R using stellar spectral parameters and Hertzsprung-Russell diagrams."
                 ]
             },
             {
@@ -772,8 +824,7 @@ export const resumeData = {
                 organization: "Independent / Client Commissions",
                 period: "2023 – Present",
                 bullets: [
-                    "Engineered custom real-time physics solvers, vector-thrust aerodynamics (SU-57 simulation), and surface-normal kinematics in Luau.",
-                    "Built procedural animation rigs and modular gameplay architectures optimized for frame-accurate client performance."
+                    "Engineered custom real-time physics solvers, vector-thrust aerodynamics (SU-57 simulation), and surface-normal kinematics in Luau."
                 ]
             },
             {
@@ -788,21 +839,21 @@ export const resumeData = {
         academicExperience: [
             {
                 institution: "Cerritos High School",
-                program: "High School Diploma Track (Coursework in Computer Science, Advanced Mathematics & Physics)",
-                period: "2022 – 2026 (Currently Enrolled)",
+                program: "High School Diploma Track (Computer Science, Advanced Mathematics & Physics)",
+                period: "2022 – 2026 (Enrolled)",
                 details: "Engineered a C++ N-Body Celestial Mechanics Solar System simulation for the Congressional App Challenge."
             },
             {
-                institution: "University of California, Irvine (UCI) — ICS Summer Academy",
+                institution: "UC Irvine ICS Summer Academy",
                 program: "Intensive Academic Programs in Machine Learning & Data Science",
-                period: "2025",
-                details: "Completed university-level training in neural network architectures, statistical inference, data wrangling, and predictive modeling in Python and R."
+                period: "July 2025",
+                details: "Completed university-level training in neural networks, statistical inference, data wrangling, and predictive modeling in Python and R."
             },
             {
-                institution: "iD Tech / NVIDIA Deep Learning Academy (Hosted at UC Irvine)",
-                program: "GPU-Accelerated Computing & Machine Learning Program",
-                period: "2023 – 2024",
-                details: "Trained computer vision, sentiment analysis, and reinforcement learning models using the NVIDIA software stack and Google Colab."
+                institution: "NVIDIA / iD Tech (Hosted at UC Irvine)",
+                program: "Certificate Program in Artificial Intelligence and Machine Learning",
+                period: "6/30/2024",
+                details: "Trained computer vision, sentiment analysis, and reinforcement learning models using the NVIDIA GPU software stack and Google Colab."
             },
             {
                 institution: "Harvard University (CS50x — Self-Study)",
@@ -813,41 +864,67 @@ export const resumeData = {
         ],
         honorsAndAwards: [
             {
-                title: "Edison Fall Advanced Conference Outstanding Award",
-                issuer: "Edison Fall Advanced Model United Nations Conference",
-                year: "2026"
+                title: "Outstanding — UCLA's BruinMUN 34 Advanced Conference (Model UN)",
+                issuer: "UCLA's BruinMUN 34 Advanced Conference (Model UN)",
+                year: "11/8/2026"
+            },
+            {
+                title: "Outstanding — Edison High School Advanced Conference (Model UN)",
+                issuer: "Edison High School Advanced Conference (Model UN)",
+                year: "10/11/2026"
+            },
+            {
+                title: "Certification of Completion of Internship",
+                issuer: "Los Angeles Metro",
+                year: "7/31/2026"
+            },
+            {
+                title: "Commendation — Huntington Beach High School Advanced Conference (Model UN)",
+                issuer: "Huntington Beach High School Advanced Conference (Model UN)",
+                year: "4/19/2026"
+            },
+            {
+                title: "Gold — CyberPatriot XVII",
+                issuer: "CyberPatriot XVII (Air & Space Forces Association), Cypress College P.A.C.E. team",
+                year: "1/18/2026"
+            },
+            {
+                title: "Gold / Semifinalist — CyberPatriot XVIII",
+                issuer: "CyberPatriot XVIII (Air & Space Forces Association), Cypress College P.A.C.E. team",
+                year: "1/17/2026"
+            },
+            {
+                title: "Student State Representative",
+                issuer: "Be Strong",
+                year: "9/22/2025"
             },
             {
                 title: "Glioma Detection Capstone Award",
-                issuer: "UCI Machine Learning Summer Academy",
-                year: "2025"
+                issuer: "UC Irvine ICS Summer Academy",
+                year: "7/25/2025"
             },
             {
                 title: "Stellar Classification Capstone Award",
-                issuer: "UCI Data Science Summer Academy",
-                year: "2025"
+                issuer: "UC Irvine ICS Summer Academy",
+                year: "7/18/2025"
             },
             {
-                title: "Huntington Beach Advanced Conference Commendation (Surf City XXIII)",
-                issuer: "Model United Nations — Disarmament & International Security Committee (DISEC)",
-                year: "2025"
+                title: "Tutor Recognition",
+                issuer: "Hour Power",
+                year: "5/12/2025"
             },
             {
-                title: "Be Strong Student State Representative Appointment",
-                issuer: "Be Strong National Organization",
-                year: "2025"
-            },
-            {
-                title: "Certificate of Volunteer Appreciation",
-                issuer: "Cerritos High School (Hour Power Tutoring Program)",
-                year: "2024 – 2025"
+                title: "Certificate in Artificial Intelligence and Machine Learning",
+                issuer: "NVIDIA",
+                year: "6/30/2024"
             }
         ],
         skillsAndCertifications: {
             certifications: [
-                "Certification in Machine Learning — UC Irvine ICS Summer Academy (2025)",
-                "Certification in Data Science — UC Irvine ICS Summer Academy (2025)",
-                "Certificate of Completion in GPU-Accelerated Machine Learning — NVIDIA Deep Learning Institute / iD Tech (2024)",
+                "Certification of Completion of Internship — Los Angeles Metro (7/31/2026)",
+                "Certification in Machine Learning — UC Irvine ICS Summer Academy (7/25/2025)",
+                "Certification in Data Science — UC Irvine ICS Summer Academy (7/18/2025)",
+                "Certificate in Artificial Intelligence and Machine Learning — NVIDIA (6/30/2024)",
                 "CS50: Introduction to Computer Science — Harvard University (2023)"
             ],
             computerCompetencies: [
@@ -875,28 +952,28 @@ export const resumeData = {
             {
                 organization: "Be Strong National Student Movement",
                 officeOrRole: "Appointed Student State Representative",
-                dates: "2025 – Present",
+                dates: "9/22/2025 – Present",
                 description: "Serve as an official state representative leading peer outreach, mental health advocacy, inclusion initiatives, and anti-bullying programs."
             },
             {
-                organization: "CyberPatriot — Air & Space Forces Association National Youth Cyber Defense Competition",
-                officeOrRole: "Gold Team Cyber Defense Competitor (Cypress College P.A.C.E. — CyberPatriot XVII & XVIII)",
-                dates: "2024 – 2025",
+                organization: "CyberPatriot (Air & Space Forces Association) — Cypress College P.A.C.E. Team",
+                officeOrRole: "Gold / Semifinalist (XVIII, 1/17/2026) & Gold Tier Competitor (XVII, 1/18/2026)",
+                dates: "2024 – 2026",
                 description: "Secured Windows and Linux virtual networks, hardened OS configurations, audited user policies, and configured firewalls against simulated threats."
             },
             {
                 organization: "Model United Nations (MUN)",
-                officeOrRole: "Committee Delegate — DISEC (Surf City XXIII Commendation & Edison Fall Outstanding)",
+                officeOrRole: "Advanced Conference Delegate (UCLA BruinMUN 34 Outstanding, Edison Outstanding, HB Commendation)",
                 dates: "2024 – 2026",
-                description: "Represented member states in international security debates, coalition building, and resolution drafting across advanced MUN conferences."
+                description: "Earned Outstanding Delegate at UCLA BruinMUN 34 (11/8/2026) and Edison HS (10/11/2026), and Commendation at Huntington Beach HS (4/19/2026)."
             }
         ],
         volunteerism: [
             {
-                role: "Hour Power Peer Tutor",
-                organization: "Cerritos High School",
-                dates: "2024 – 2025",
-                description: "Volunteered extensive after-school hours tutoring peers in STEM and academic subjects, fostering collaborative learning and earning official recognition."
+                role: "Hour Power Peer Tutor (Tutor Recognition Award)",
+                organization: "Hour Power — Cerritos High School",
+                dates: "2024 – 5/12/2025",
+                description: "Volunteered extensive after-school hours tutoring peers in STEM and academic subjects, fostering collaborative learning and earning Tutor Recognition."
             },
             {
                 role: "Science Experiment & STEM Outreach Volunteer",
@@ -907,7 +984,7 @@ export const resumeData = {
             {
                 role: "Student Resilience & Community Inclusion Advocate",
                 organization: "Be Strong",
-                dates: "2025 – Present",
+                dates: "9/22/2025 – Present",
                 description: "Organized peer-support initiatives and student wellness awareness campaigns within the school community."
             }
         ],
