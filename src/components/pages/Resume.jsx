@@ -3,13 +3,10 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import { resumeData } from '../../data/resumeData';
 import {
   Printer,
-  User,
   GraduationCap,
   Briefcase,
   Trophy,
   Cpu,
-  Star,
-  Code,
   HeartHandshake,
   Users,
   Compass,
@@ -41,56 +38,26 @@ const Resume = ({ defaultVersion }) => {
     setSearchParams({ v: String(ver) });
   };
 
-  const {
-    personalInfo,
-    experience,
-    education,
-    awards,
-    projects,
-    pdfResumeData,
-    secondResumeData
-  } = resumeData;
-
-  const { content = {} } = pdfResumeData || {};
+  const { secondResumeData } = resumeData;
 
   const handlePrint = () => {
     window.print();
   };
 
-  const strengthsList = content.strengths || [
-    'Analytical',
-    'Innovative',
-    'Problem Solver',
-    'Detail-Oriented',
-    'Collaborative',
-    'Adaptable',
-    'Systems Thinker',
-    'Resourceful',
-    'Fast Learner',
-    'Creative',
-    'Methodical',
-    'Self-Motivated'
-  ];
-
-  // Resume 1: Show LA Metro, PULSE Regional Director, and AI Consultant under Work & Leadership Experience
-  const pdfWorkExperience = experience.filter((exp) => ![1, 3].includes(exp.id));
-  const displayProjects = projects.filter((p) => [2, 13, 3].includes(p.id));
-  const displayAwards = awards;
-
-  // Skills formatted for Kickresume progress bars
+  // Skills formatted for progress bars in Résumé 1
   const programmingSkills = [
-    { name: 'Python / AI & ML (PyTorch, TF)', level: 100 },
-    { name: 'Web (React / JS / HTML / CSS)', level: 95 },
+    { name: 'Python / AI & ML (PyTorch, TensorFlow)', level: 100 },
+    { name: 'Web (React, JS, TypeScript, HTML/CSS)', level: 95 },
     { name: 'C++ / C / Computational Physics', level: 90 },
-    { name: 'Luau & Java Autonomous Systems', level: 88 },
-    { name: 'Generative AI, LLMs & CUDA', level: 82 }
+    { name: 'Luau, Java & Autonomous Systems', level: 88 },
+    { name: 'Generative AI, LLMs, CUDA & OpenGL', level: 85 }
   ];
 
   const designToolsSkills = [
-    { name: 'Graphic Design & Visual Branding', level: 95 },
-    { name: 'UI/UX & Adobe Creative Suite', level: 90 },
-    { name: 'Linux, Cybersecurity & WireGuard', level: 88 },
-    { name: 'Data Science & R Statistical Modeling', level: 85 }
+    { name: 'Graphic Design, UI/UX & Adobe Suite', level: 95 },
+    { name: 'Linux, Cybersecurity & WireGuard VPN', level: 88 },
+    { name: 'Data Science, R & Statistical Modeling', level: 85 },
+    { name: 'Blender 3D, Three.js & Robotics SDK', level: 82 }
   ];
 
   return (
@@ -103,7 +70,7 @@ const Resume = ({ defaultVersion }) => {
             className={`switcher-btn ${activeResume === 1 ? 'active' : ''}`}
           >
             <FileText size={16} />
-            Résumé 1: Technical & Design (Modified)
+            Résumé 1: Modern Visual Format
           </button>
           <button
             type="button"
@@ -111,7 +78,7 @@ const Resume = ({ defaultVersion }) => {
             className={`switcher-btn ${activeResume === 2 ? 'active' : ''}`}
           >
             <FileText size={16} />
-            Résumé 2: Comprehensive Academic & Activities Outline
+            Résumé 2: Classic Academic Outline Format
           </button>
         </div>
 
@@ -128,199 +95,18 @@ const Resume = ({ defaultVersion }) => {
             <strong>None</strong> | Background Graphics: <strong>ON</strong>
           </p>
           <p className="privacy-compliance-note">
-            ✓ Compliant with privacy guidelines: Contains <strong>no</strong> SSN, birth date, ethnicity, race, sex, or sensitive personal data.
+            ✓ Includes all 8 required sections (Name, Research & Work Experience, Academic Experience, Honors & Awards, Skills & Certifications / Computer Competencies, Memberships & Extracurriculars with offices & dates, Hobbies & Interests, Volunteerism) and omits all personal/demographic information.
           </p>
         </div>
       </div>
 
       {activeResume === 1 ? (
         /* =========================================================
-           RÉSUMÉ 1: MODIFIED TECHNICAL & DESIGN PORTFOLIO RÉSUMÉ
+           RÉSUMÉ 1: MODERN VISUAL 2-COLUMN FORMAT (WITH SKILL BARS)
            ========================================================= */
         <div className="resume-paper">
-          {/* Header Banner */}
+          {/* Header Banner - Strictly Name & Professional Subtitle (No SSN, DOB, Race, Sex, or Personal Info) */}
           <div className="kr-header-banner">
-            <div className="kr-header-decor-left"></div>
-            <div>
-              <h1>Krish Sathyan</h1>
-              <div className="kr-header-subtitle">
-                Software Engineering • Machine Learning Research • Graphic Design
-              </div>
-            </div>
-            <div className="kr-header-decor-right"></div>
-          </div>
-
-          {/* Contact Info Sub-Bar (No sensitive demographic/personal info) */}
-          <div className="kr-contact-bar">
-            <span>{personalInfo.email}</span>
-            <span className="kr-bar-sep">|</span>
-            <span>{personalInfo.socials.github}</span>
-            <span className="kr-bar-sep">|</span>
-            <span>arkrainian.github.io</span>
-          </div>
-
-          {/* 2-Column Resume Content Grid */}
-          <div className="kr-grid">
-            {/* Left Column */}
-            <div className="kr-col">
-              {/* Profile Section */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <User size={14} className="kr-title-icon" /> Profile
-                </h3>
-                <p className="kr-text">{personalInfo.summary}</p>
-              </section>
-
-              {/* Work & Leadership Experience Section */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Briefcase size={14} className="kr-title-icon" /> Work, Internship & Leadership Experience
-                </h3>
-                {pdfWorkExperience.map((exp) => (
-                  <div key={exp.id} className="kr-item">
-                    <div className="kr-item-header">
-                      <h4 className="kr-item-title">{exp.role}</h4>
-                      <span className="kr-item-date-inline">{exp.period}</span>
-                    </div>
-                    <div className="kr-item-sub">{exp.company}</div>
-                    <ul className="kr-bullet-list">
-                      {exp.description.slice(0, 3).map((desc, i) => (
-                        <li key={i}>{desc}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </section>
-
-              {/* Academic Experience & Certifications */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <GraduationCap size={14} className="kr-title-icon" /> Academic Experience & Certifications
-                </h3>
-                {education.map((edu) => (
-                  <div key={edu.id} className="kr-item">
-                    <div className="kr-item-header">
-                      <h4 className="kr-item-title">{edu.degree || edu.school}</h4>
-                      <span className="kr-item-date-inline">{edu.year}</span>
-                    </div>
-                    <div className="kr-item-sub">{edu.school}</div>
-                    {edu.description && <p className="kr-item-desc">{edu.description}</p>}
-                  </div>
-                ))}
-              </section>
-            </div>
-
-            {/* Right Column */}
-            <div className="kr-col">
-              {/* Research & Technical Projects */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Code size={14} className="kr-title-icon" /> Research & Technical Projects
-                </h3>
-                {displayProjects.map((proj) => (
-                  <div key={proj.id} className="kr-item">
-                    <h4 className="kr-item-title">{proj.title}</h4>
-                    <p className="kr-item-desc">{proj.description}</p>
-                    <div className="kr-tech-pills">
-                      {proj.tech.map((t, i) => (
-                        <span key={i} className="kr-tech-pill">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </section>
-
-              {/* Honors, Awards & Leadership */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Trophy size={14} className="kr-title-icon" /> Honors, Awards & Extracurriculars
-                </h3>
-                {displayAwards.map((award) => (
-                  <div key={award.id} className="kr-award-item-compact">
-                    <span className="kr-award-line">
-                      <strong>{award.title}</strong> <span className="kr-award-issuer">— {award.issuer}</span>
-                    </span>
-                    <span className="kr-item-date-inline">{award.year}</span>
-                  </div>
-                ))}
-              </section>
-
-              {/* Volunteerism */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <HeartHandshake size={14} className="kr-title-icon" /> Volunteerism & Community Service
-                </h3>
-                <div className="kr-item">
-                  <div className="kr-item-header">
-                    <h4 className="kr-item-title">Hour Power Peer Tutor & STEM Outreach Volunteer</h4>
-                    <span className="kr-item-date-inline">2024 – 2025</span>
-                  </div>
-                  <div className="kr-item-sub">Cerritos High School & Cerritos Elementary</div>
-                  <p className="kr-item-desc">
-                    Tutored high school peers during Hour Power (earning the Certificate of Volunteer Appreciation) and led interactive physics/magnetism experiments for elementary students.
-                  </p>
-                </div>
-              </section>
-
-              {/* Computer Competencies & Skills */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Cpu size={14} className="kr-title-icon" /> Computer Competencies & Skills
-                </h3>
-                <div className="kr-skill-cat-title">PROGRAMMING & COMPUTING SYSTEMS</div>
-                <div className="kr-skills-list">
-                  {programmingSkills.map((sk, i) => (
-                    <div key={i} className="kr-skill-row">
-                      <span className="kr-skill-name">{sk.name}</span>
-                      <div className="kr-skill-bar-bg">
-                        <div className="kr-skill-bar-fill" style={{ width: `${sk.level}%` }}></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="kr-skill-cat-title" style={{ marginTop: '0.3rem' }}>
-                  DESIGN, CYBERSECURITY & DATA ANALYTICS
-                </div>
-                <div className="kr-skills-list">
-                  {designToolsSkills.map((sk, i) => (
-                    <div key={i} className="kr-skill-row">
-                      <span className="kr-skill-name">{sk.name}</span>
-                      <div className="kr-skill-bar-bg">
-                        <div className="kr-skill-bar-fill" style={{ width: `${sk.level}%` }}></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Hobbies, Interests & Strengths */}
-              <section className="kr-section">
-                <h3 className="kr-section-title">
-                  <Star size={14} className="kr-title-icon" /> Hobbies, Interests & Strengths
-                </h3>
-                <p className="kr-item-desc" style={{ marginBottom: '0.25rem' }}>
-                  <strong>Interests:</strong> Culinary Arts (slow-cooked brisket, salmon, traditional Indian chai & South Indian filter coffee), 3D Art & Blender Animation, Astrophysics & Stargazing, Aerodynamics Simulation.
-                </p>
-                <div className="kr-strengths-grid">
-                  {strengthsList.slice(0, 8).map((st, i) => (
-                    <span key={i} className="kr-strength-badge">
-                      {st}
-                    </span>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* =========================================================
-           RÉSUMÉ 2: COMPREHENSIVE OUTLINE RÉSUMÉ (ALL REQUIRED SECTIONS)
-           ========================================================= */
-        <div className="resume-paper resume-paper-v2">
-          {/* Header Banner - Strictly Name & Professional Subtitle (No SSN, DOB, Race, Sex, etc.) */}
-          <div className="kr-header-banner kr-header-v2">
             <div className="kr-header-decor-left"></div>
             <div>
               <h1>{secondResumeData.name}</h1>
@@ -329,21 +115,14 @@ const Resume = ({ defaultVersion }) => {
             <div className="kr-header-decor-right"></div>
           </div>
 
-          <div className="kr-contact-bar kr-contact-v2">
-            <span>{personalInfo.email}</span>
-            <span className="kr-bar-sep">|</span>
-            <span>{personalInfo.socials.github}</span>
-            <span className="kr-bar-sep">|</span>
-            <span>arkrainian.github.io</span>
-          </div>
-
-          <div className="kr-grid kr-grid-v2">
-            {/* LEFT COLUMN */}
+          {/* 2-Column Resume Content Grid */}
+          <div className="kr-grid" style={{ marginTop: '0.4rem' }}>
+            {/* Left Column */}
             <div className="kr-col">
               {/* 1. Research and Work Experience (including past internships) */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <Briefcase size={14} className="kr-title-icon" /> Research and Work Experience
+                  <Briefcase size={13} className="kr-title-icon" /> Research and Work Experience
                 </h3>
                 {secondResumeData.researchAndWorkExperience.map((item, idx) => (
                   <div key={idx} className="kr-item">
@@ -364,7 +143,7 @@ const Resume = ({ defaultVersion }) => {
               {/* 2. Academic Experience */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <GraduationCap size={14} className="kr-title-icon" /> Academic Experience
+                  <GraduationCap size={13} className="kr-title-icon" /> Academic Experience
                 </h3>
                 {secondResumeData.academicExperience.map((acad, idx) => (
                   <div key={idx} className="kr-item">
@@ -381,7 +160,7 @@ const Resume = ({ defaultVersion }) => {
               {/* 3. Volunteerism */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <HeartHandshake size={14} className="kr-title-icon" /> Volunteerism
+                  <HeartHandshake size={13} className="kr-title-icon" /> Volunteerism
                 </h3>
                 {secondResumeData.volunteerism.map((vol, idx) => (
                   <div key={idx} className="kr-item">
@@ -397,12 +176,12 @@ const Resume = ({ defaultVersion }) => {
               </section>
             </div>
 
-            {/* RIGHT COLUMN */}
+            {/* Right Column */}
             <div className="kr-col">
               {/* 4. Honors and Awards */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <Trophy size={14} className="kr-title-icon" /> Honors and Awards
+                  <Trophy size={13} className="kr-title-icon" /> Honors and Awards
                 </h3>
                 {secondResumeData.honorsAndAwards.map((hon, idx) => (
                   <div key={idx} className="kr-award-item-compact">
@@ -420,28 +199,32 @@ const Resume = ({ defaultVersion }) => {
               {/* 5. Skills and Certifications, including Computer Competencies */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <Cpu size={14} className="kr-title-icon" /> Skills & Certifications (Computer Competencies)
+                  <Cpu size={13} className="kr-title-icon" /> Skills & Certifications (Computer Competencies)
                 </h3>
-                <div className="kr-skill-cat-title">TECHNICAL CERTIFICATIONS</div>
-                <ul className="kr-bullet-list" style={{ marginBottom: '0.3rem' }}>
+                <div className="kr-skill-cat-title">CERTIFICATIONS</div>
+                <ul className="kr-bullet-list" style={{ marginBottom: '0.22rem' }}>
                   {secondResumeData.skillsAndCertifications.certifications.map((cert, idx) => (
                     <li key={idx}>{cert}</li>
                   ))}
                 </ul>
 
                 <div className="kr-skill-cat-title">COMPUTER COMPETENCIES</div>
-                {secondResumeData.skillsAndCertifications.computerCompetencies.map((comp, idx) => (
-                  <div key={idx} className="kr-comp-block">
-                    <span className="kr-comp-label">{comp.category}: </span>
-                    <span className="kr-comp-items">{comp.items}</span>
-                  </div>
-                ))}
+                <div className="kr-skills-list">
+                  {[...programmingSkills, ...designToolsSkills].map((sk, i) => (
+                    <div key={i} className="kr-skill-row">
+                      <span className="kr-skill-name">{sk.name}</span>
+                      <div className="kr-skill-bar-bg">
+                        <div className="kr-skill-bar-fill" style={{ width: `${sk.level}%` }}></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </section>
 
               {/* 6. Memberships and Extracurricular Activities (including offices held and dates) */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <Users size={14} className="kr-title-icon" /> Memberships & Extracurricular Activities
+                  <Users size={13} className="kr-title-icon" /> Memberships & Extracurricular Activities
                 </h3>
                 {secondResumeData.membershipsAndExtracurriculars.map((mem, idx) => (
                   <div key={idx} className="kr-item">
@@ -458,7 +241,7 @@ const Resume = ({ defaultVersion }) => {
               {/* 7. Hobbies and Interests */}
               <section className="kr-section">
                 <h3 className="kr-section-title">
-                  <Compass size={14} className="kr-title-icon" /> Hobbies and Interests
+                  <Compass size={13} className="kr-title-icon" /> Hobbies and Interests
                 </h3>
                 <div className="kr-hobbies-list">
                   {secondResumeData.hobbiesAndInterests.map((hob, idx) => (
@@ -468,6 +251,152 @@ const Resume = ({ defaultVersion }) => {
                     </div>
                   ))}
                 </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* =========================================================
+           RÉSUMÉ 2: CLASSIC ACADEMIC OUTLINE FORMAT
+           ========================================================= */
+        <div className="resume-paper resume-paper-v2">
+          {/* Header - Strictly Name Only (No SSN, Birth Date, Ethnicity, Race, Sex, or Personal Info) */}
+          <div className="v2-classic-header">
+            <h1>{secondResumeData.name}</h1>
+            <div className="v2-classic-subtitle">{secondResumeData.subtitle}</div>
+          </div>
+
+          <div className="kr-grid kr-grid-v2">
+            {/* LEFT COLUMN */}
+            <div className="kr-col">
+              {/* 1. Research and Work Experience (including past internships) */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Briefcase size={13} className="kr-title-icon" /> Research and Work Experience
+                </h3>
+                {secondResumeData.researchAndWorkExperience.map((item, idx) => (
+                  <div key={idx} className="kr-item">
+                    <div className="kr-item-header">
+                      <h4 className="kr-item-title">{item.role}</h4>
+                      <span className="kr-item-date-inline">{item.period}</span>
+                    </div>
+                    <div className="kr-item-sub">{item.organization}</div>
+                    <ul className="kr-bullet-list">
+                      {item.bullets.map((b, i) => (
+                        <li key={i}>{b}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </section>
+
+              {/* 2. Academic Experience */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <GraduationCap size={13} className="kr-title-icon" /> Academic Experience
+                </h3>
+                {secondResumeData.academicExperience.map((acad, idx) => (
+                  <div key={idx} className="kr-item">
+                    <div className="kr-item-header">
+                      <h4 className="kr-item-title">{acad.institution}</h4>
+                      <span className="kr-item-date-inline">{acad.period}</span>
+                    </div>
+                    <div className="kr-item-sub">{acad.program}</div>
+                    <p className="kr-item-desc">{acad.details}</p>
+                  </div>
+                ))}
+              </section>
+
+              {/* 3.Hobbies and Interests */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Compass size={13} className="kr-title-icon" /> Hobbies and Interests
+                </h3>
+                <div className="kr-hobbies-list">
+                  {secondResumeData.hobbiesAndInterests.map((hob, idx) => (
+                    <div key={idx} className="kr-hobby-row">
+                      <span className="kr-comp-label">{hob.name}: </span>
+                      <span className="kr-comp-items">{hob.detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 4. Volunteerism */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <HeartHandshake size={13} className="kr-title-icon" /> Volunteerism
+                </h3>
+                {secondResumeData.volunteerism.map((vol, idx) => (
+                  <div key={idx} className="kr-item">
+                    <div className="kr-item-header">
+                      <h4 className="kr-item-title">
+                        {vol.role} — <span className="kr-inline-org">{vol.organization}</span>
+                      </h4>
+                      <span className="kr-item-date-inline">{vol.dates}</span>
+                    </div>
+                    <p className="kr-item-desc">{vol.description}</p>
+                  </div>
+                ))}
+              </section>
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div className="kr-col">
+              {/* 5. Honors and Awards */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Trophy size={13} className="kr-title-icon" /> Honors and Awards
+                </h3>
+                {secondResumeData.honorsAndAwards.map((hon, idx) => (
+                  <div key={idx} className="kr-award-item-compact">
+                    <span className="kr-award-line">
+                      <strong>{hon.title}</strong>{' '}
+                      {hon.issuer && !hon.title.includes(hon.issuer) && (
+                        <span className="kr-award-issuer">— {hon.issuer}</span>
+                      )}
+                    </span>
+                    <span className="kr-item-date-inline">{hon.year}</span>
+                  </div>
+                ))}
+              </section>
+
+              {/* 6. Skills and Certifications, including Computer Competencies */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Cpu size={13} className="kr-title-icon" /> Skills and Certifications, including Computer Competencies
+                </h3>
+                <div className="kr-skill-cat-title">CERTIFICATIONS</div>
+                <ul className="kr-bullet-list" style={{ marginBottom: '0.25rem' }}>
+                  {secondResumeData.skillsAndCertifications.certifications.map((cert, idx) => (
+                    <li key={idx}>{cert}</li>
+                  ))}
+                </ul>
+
+                <div className="kr-skill-cat-title">COMPUTER COMPETENCIES</div>
+                {secondResumeData.skillsAndCertifications.computerCompetencies.map((comp, idx) => (
+                  <div key={idx} className="kr-comp-block">
+                    <span className="kr-comp-label">{comp.category}: </span>
+                    <span className="kr-comp-items">{comp.items}</span>
+                  </div>
+                ))}
+              </section>
+
+              {/* 7. Memberships and Extracurricular Activities (including offices held and dates) */}
+              <section className="kr-section">
+                <h3 className="kr-section-title">
+                  <Users size={13} className="kr-title-icon" /> Memberships and Extracurricular Activities
+                </h3>
+                {secondResumeData.membershipsAndExtracurriculars.map((mem, idx) => (
+                  <div key={idx} className="kr-item">
+                    <div className="kr-item-header">
+                      <h4 className="kr-item-title">{mem.organization}</h4>
+                      <span className="kr-item-date-inline">{mem.dates}</span>
+                    </div>
+                    <div className="kr-item-sub">Office / Role Held: {mem.officeOrRole}</div>
+                    <p className="kr-item-desc">{mem.description}</p>
+                  </div>
+                ))}
               </section>
             </div>
           </div>
@@ -555,9 +484,10 @@ const Resume = ({ defaultVersion }) => {
         }
 
         .privacy-compliance-note {
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           color: #38bdf8;
           margin: 0;
+          line-height: 1.35;
         }
 
         /* US Letter 8.5in x 11in 1-Page Layout Container */
@@ -567,11 +497,11 @@ const Resume = ({ defaultVersion }) => {
           max-height: 11in;
           background: #ffffff;
           color: #0f172a;
-          padding: 0.26in 0.32in;
+          padding: 0.25in 0.32in;
           box-shadow: 0 20px 50px rgba(0,0,0,0.6);
           position: relative;
-          font-size: 7.7pt;
-          line-height: 1.24;
+          font-size: 7.5pt;
+          line-height: 1.22;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           box-sizing: border-box;
           overflow: hidden;
@@ -580,7 +510,7 @@ const Resume = ({ defaultVersion }) => {
         /* Blue Theme Header Banner matching Website Palette */
         .kr-header-banner {
           background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-          padding: 0.5rem 1.2rem;
+          padding: 0.48rem 1.2rem;
           text-align: center;
           display: flex;
           align-items: center;
@@ -590,7 +520,7 @@ const Resume = ({ defaultVersion }) => {
 
         .kr-header-banner h1 {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 19pt;
+          font-size: 18.5pt;
           font-weight: 700;
           color: #38bdf8;
           margin: 0;
@@ -599,10 +529,10 @@ const Resume = ({ defaultVersion }) => {
         }
 
         .kr-header-subtitle {
-          font-size: 7.5pt;
+          font-size: 7.4pt;
           color: #e2e8f0;
           font-weight: 500;
-          margin-top: 0.12rem;
+          margin-top: 0.1rem;
           letter-spacing: 0.02em;
         }
 
@@ -613,49 +543,56 @@ const Resume = ({ defaultVersion }) => {
           border-right: 2px solid #38bdf8;
         }
 
-        .kr-contact-bar {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 0.65rem;
-          padding: 0.24rem 0;
-          font-size: 7.6pt;
-          font-weight: 600;
-          color: #334155;
-          border-bottom: 1px solid #bae6fd;
-          margin-bottom: 0.42rem;
+        /* Classic Academic Header for Résumé 2 */
+        .v2-classic-header {
+          text-align: center;
+          border-bottom: 2px solid #0f172a;
+          padding-bottom: 0.3rem;
+          margin-bottom: 0.4rem;
         }
 
-        .kr-bar-sep {
-          color: #38bdf8;
+        .v2-classic-header h1 {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 19pt;
           font-weight: 700;
+          color: #0f172a;
+          margin: 0;
+          letter-spacing: 0.03em;
+          line-height: 1.1;
+        }
+
+        .v2-classic-subtitle {
+          font-size: 7.6pt;
+          color: #0369a1;
+          font-weight: 600;
+          margin-top: 0.1rem;
         }
 
         .kr-grid {
           display: grid;
-          grid-template-columns: 1.04fr 1fr;
-          gap: 0.85rem;
+          grid-template-columns: 1.02fr 1fr;
+          gap: 0.8rem;
         }
 
         .kr-section {
-          margin-bottom: 0.44rem;
+          margin-bottom: 0.38rem;
           page-break-inside: avoid;
           break-inside: avoid;
         }
 
         .kr-section-title {
-          font-size: 8.8pt;
+          font-size: 8.2pt;
           font-weight: 700;
           color: #0f172a;
           display: flex;
           align-items: center;
-          gap: 0.3rem;
-          margin: 0 0 0.22rem 0;
-          padding-bottom: 0.1rem;
+          gap: 0.28rem;
+          margin: 0 0 0.18rem 0;
+          padding-bottom: 0.08rem;
           border-bottom: 1.5px solid #38bdf8;
           font-family: 'Space Grotesk', sans-serif;
           text-transform: uppercase;
-          letter-spacing: 0.025em;
+          letter-spacing: 0.02em;
         }
 
         .kr-title-icon {
@@ -663,39 +600,21 @@ const Resume = ({ defaultVersion }) => {
           flex-shrink: 0;
         }
 
-        .kr-text {
-          font-size: 7.4pt;
-          line-height: 1.24;
-          color: #334155;
-          margin: 0;
-        }
-
         .kr-item {
-          margin-bottom: 0.32rem;
+          margin-bottom: 0.28rem;
           page-break-inside: avoid;
           break-inside: avoid;
-        }
-
-        .kr-item-tight {
-          margin-bottom: 0.22rem;
         }
 
         .kr-item-header {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          gap: 0.3rem;
-        }
-
-        .kr-item-date {
-          font-size: 7pt;
-          color: #0369a1;
-          font-weight: 600;
-          margin-bottom: 0.04rem;
+          gap: 0.25rem;
         }
 
         .kr-item-date-inline {
-          font-size: 7pt;
+          font-size: 6.8pt;
           color: #0369a1;
           font-weight: 600;
           white-space: nowrap;
@@ -703,11 +622,11 @@ const Resume = ({ defaultVersion }) => {
         }
 
         .kr-item-title {
-          font-size: 8pt;
+          font-size: 7.7pt;
           font-weight: 700;
           color: #0f172a;
           margin: 0;
-          line-height: 1.18;
+          line-height: 1.16;
         }
 
         .kr-inline-org {
@@ -717,80 +636,63 @@ const Resume = ({ defaultVersion }) => {
 
         .kr-award-issuer {
           font-weight: 500;
-          font-size: 7.1pt;
+          font-size: 6.8pt;
           color: #475569;
         }
 
         .kr-item-sub {
-          font-size: 7.3pt;
+          font-size: 7.1pt;
           font-weight: 600;
           color: #0284c7;
-          margin-bottom: 0.06rem;
+          margin-bottom: 0.04rem;
         }
 
         .kr-item-desc {
-          font-size: 7.2pt;
+          font-size: 7pt;
           color: #475569;
-          margin: 0.06rem 0;
-          line-height: 1.2;
+          margin: 0.04rem 0;
+          line-height: 1.18;
         }
 
         .kr-bullet-list {
-          margin: 0.1rem 0 0 0;
+          margin: 0.08rem 0 0 0;
           padding-left: 0.8rem;
-          font-size: 7.2pt;
+          font-size: 7pt;
           color: #334155;
         }
 
         .kr-bullet-list li {
-          margin-bottom: 0.07rem;
-          line-height: 1.2;
-        }
-
-        .kr-tech-pills {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.18rem;
-          margin-top: 0.1rem;
-        }
-
-        .kr-tech-pill {
-          font-size: 6.6pt;
-          background: #f0f9ff;
-          color: #0369a1;
-          padding: 0.04rem 0.26rem;
-          border-radius: 2px;
-          border: 1px solid #bae6fd;
-          font-weight: 500;
+          margin-bottom: 0.05rem;
+          line-height: 1.18;
         }
 
         .kr-award-item-compact {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          gap: 0.3rem;
-          margin-bottom: 0.1rem;
+          gap: 0.25rem;
+          margin-bottom: 0.09rem;
         }
 
         .kr-award-line {
-          font-size: 7pt;
+          font-size: 6.9pt;
           line-height: 1.15;
           color: #0f172a;
         }
 
         /* Blue Kickresume Skills Progress Bars */
         .kr-skill-cat-title {
-          font-size: 6.8pt;
+          font-size: 6.6pt;
           font-weight: 700;
           color: #0369a1;
           letter-spacing: 0.05em;
-          margin-bottom: 0.14rem;
+          margin-bottom: 0.12rem;
         }
 
         .kr-skills-list {
           display: flex;
           flex-direction: column;
-          gap: 0.18rem;
+          gap: 0.14rem;
         }
 
         .kr-skill-row {
@@ -800,14 +702,14 @@ const Resume = ({ defaultVersion }) => {
         }
 
         .kr-skill-name {
-          font-size: 7.2pt;
+          font-size: 6.9pt;
           font-weight: 600;
           color: #0f172a;
         }
 
         .kr-skill-bar-bg {
-          width: 75px;
-          height: 5.5px;
+          width: 70px;
+          height: 5px;
           background-color: #e0f2fe;
           border-radius: 2px;
           overflow: hidden;
@@ -819,11 +721,11 @@ const Resume = ({ defaultVersion }) => {
           border-radius: 2px;
         }
 
-        /* Competencies & Hobbies formatting for Resume 2 */
+        /* Competencies & Hobbies formatting */
         .kr-comp-block {
-          font-size: 7.2pt;
-          line-height: 1.2;
-          margin-bottom: 0.18rem;
+          font-size: 7pt;
+          line-height: 1.18;
+          margin-bottom: 0.14rem;
           color: #334155;
         }
 
@@ -839,29 +741,12 @@ const Resume = ({ defaultVersion }) => {
         .kr-hobbies-list {
           display: flex;
           flex-direction: column;
-          gap: 0.16rem;
+          gap: 0.12rem;
         }
 
         .kr-hobby-row {
-          font-size: 7.2pt;
-          line-height: 1.2;
-        }
-
-        /* Vibrant Blue Strengths Badges */
-        .kr-strengths-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.22rem;
-        }
-
-        .kr-strength-badge {
-          background-color: #0284c7;
-          color: #ffffff;
-          padding: 0.1rem 0.4rem;
-          font-size: 6.9pt;
-          font-weight: 600;
-          border-radius: 3px;
-          display: inline-block;
+          font-size: 7pt;
+          line-height: 1.18;
         }
 
         /* Single-Page US Letter Print Setup */
@@ -898,7 +783,7 @@ const Resume = ({ defaultVersion }) => {
             height: 11in !important;
             max-height: 11in !important;
             box-shadow: none !important;
-            padding: 0.26in 0.32in !important;
+            padding: 0.25in 0.32in !important;
             margin: 0 !important;
             background: #ffffff !important;
             color: #0f172a !important;
@@ -932,17 +817,10 @@ const Resume = ({ defaultVersion }) => {
             print-color-adjust: exact !important;
           }
 
-          .kr-strength-badge {
-            background-color: #0284c7 !important;
-            color: #ffffff !important;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-          }
-
           .kr-grid {
             display: flex !important;
             flex-direction: row;
-            gap: 0.85rem;
+            gap: 0.8rem;
           }
           
           .kr-col {
