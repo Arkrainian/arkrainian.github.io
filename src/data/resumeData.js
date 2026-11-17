@@ -119,7 +119,7 @@ export const resumeData = {
             id: 3,
             degree: "Currently Enrolled",
             school: "Cerritos High School",
-            year: "2024 – 2026",
+            year: "2024 – 2026 (Enrolled)",
             status: "enrolled",
             description: "High school coursework emphasizing Computer Science, Mathematics, and Physics.",
             url: "https://www.cerritoshs.us/",
@@ -851,7 +851,7 @@ export const resumeData = {
             {
                 institution: "Cerritos High School",
                 program: "High School Diploma Track (Computer Science, Advanced Mathematics & Physics)",
-                period: "2024 – 2026",
+                period: "2024 – 2026 (Enrolled)",
                 details: "Engineered a C++ N-Body Celestial Mechanics Solar System simulation for the Congressional App Challenge."
             },
             {
