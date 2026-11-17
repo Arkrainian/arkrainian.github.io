@@ -165,11 +165,10 @@ const Resume = ({ defaultVersion }) => {
                 {secondResumeData.volunteerism.map((vol, idx) => (
                   <div key={idx} className="kr-item">
                     <div className="kr-item-header">
-                      <h4 className="kr-item-title">
-                        {vol.role} — <span className="kr-inline-org">{vol.organization}</span>
-                      </h4>
+                      <h4 className="kr-item-title">{vol.role}</h4>
                       <span className="kr-item-date-inline">{vol.dates}</span>
                     </div>
+                    <div className="kr-item-sub">{vol.organization}</div>
                     <p className="kr-item-desc">{vol.description}</p>
                   </div>
                 ))}
@@ -315,11 +314,10 @@ const Resume = ({ defaultVersion }) => {
                 {secondResumeData.volunteerism.map((vol, idx) => (
                   <div key={idx} className="kr-item">
                     <div className="kr-item-header">
-                      <h4 className="kr-item-title">
-                        {vol.role} — <span className="kr-inline-org">{vol.organization}</span>
-                      </h4>
+                      <h4 className="kr-item-title">{vol.role}</h4>
                       <span className="kr-item-date-inline">{vol.dates}</span>
                     </div>
+                    <div className="kr-item-sub">{vol.organization}</div>
                     <p className="kr-item-desc">{vol.description}</p>
                   </div>
                 ))}
@@ -581,12 +579,13 @@ const Resume = ({ defaultVersion }) => {
         .kr-col {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: flex-start;
+          gap: 0.35rem;
           height: 100%;
         }
 
         .kr-section {
-          margin-bottom: 0.2rem;
+          margin-bottom: 0.15rem;
           page-break-inside: avoid;
           break-inside: avoid;
         }
@@ -840,7 +839,8 @@ const Resume = ({ defaultVersion }) => {
             flex: 1;
             display: flex !important;
             flex-direction: column;
-            justify-content: space-between !important;
+            justify-content: flex-start !important;
+            gap: 0.35rem !important;
           }
         }
 

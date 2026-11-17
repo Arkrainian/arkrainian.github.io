@@ -119,7 +119,7 @@ export const resumeData = {
             id: 3,
             degree: "Currently Enrolled",
             school: "Cerritos High School",
-            year: "2026",
+            year: "2024 – 2026",
             status: "enrolled",
             description: "High school coursework emphasizing Computer Science, Mathematics, and Physics.",
             url: "https://www.cerritoshs.us/",
@@ -851,7 +851,7 @@ export const resumeData = {
             {
                 institution: "Cerritos High School",
                 program: "High School Diploma Track (Computer Science, Advanced Mathematics & Physics)",
-                period: "2022 – 2026 (Enrolled)",
+                period: "2024 – 2026",
                 details: "Engineered a C++ N-Body Celestial Mechanics Solar System simulation for the Congressional App Challenge."
             },
             {
@@ -963,8 +963,8 @@ export const resumeData = {
             {
                 organization: "Be Strong National Student Movement",
                 officeOrRole: "Appointed Student State Representative",
-                dates: "9/22/2025 – Present",
-                description: "Serve as an official state representative leading peer outreach, mental health advocacy, inclusion initiatives, and anti-bullying programs."
+                dates: "2025 – Present",
+                description: "Serve as an official state representative (appointed 9/22/2025) leading peer outreach, mental health advocacy, inclusion initiatives, and anti-bullying programs."
             },
             {
                 organization: "CyberPatriot (Air & Space Forces Association) — Cypress College P.A.C.E. Team",
@@ -987,10 +987,10 @@ export const resumeData = {
         ],
         volunteerism: [
             {
-                role: "Hour Power Peer Tutor (Tutor Recognition Award)",
-                organization: "Hour Power — Cerritos High School",
-                dates: "2024 – 5/12/2025",
-                description: "Volunteered extensive after-school hours tutoring peers in STEM and academic subjects, fostering collaborative learning and earning Tutor Recognition."
+                role: "Hour Power Peer Tutor",
+                organization: "Cerritos High School — Hour Power Program",
+                dates: "2024 – 2025",
+                description: "Volunteered after-school hours tutoring peers across STEM and academic subjects, fostering a collaborative learning environment and earning the Hour Power Tutor Recognition Award (5/12/2025)."
             },
             {
                 role: "Science Experiment & STEM Outreach Volunteer",
@@ -1001,7 +1001,7 @@ export const resumeData = {
             {
                 role: "Student Resilience & Community Inclusion Advocate",
                 organization: "Be Strong",
-                dates: "9/22/2025 – Present",
+                dates: "2025 – Present",
                 description: "Organized peer-support initiatives and student wellness awareness campaigns within the school community."
             }
         ],
